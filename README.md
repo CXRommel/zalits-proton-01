@@ -158,12 +158,47 @@ cxrommel/new-feature      # ❌ Falta prefijo features/
 - **Revisión**: Los PR's requieren revisión antes de merge
 - **Formato**: Usar títulos descriptivos y claros
 
+#### **⚠️ Proceso Obligatorio para Bugs y Hotfixes:**
+
+**Antes de crear cualquier rama de corrección (bug/hotfix), es OBLIGATORIO:**
+
+1. **Crear un Issue en GitHub:**
+   - Ir a "Issues" en el repositorio
+   - Describir el problema detalladamente
+   - Asignar etiquetas: `bug`, `hotfix`, `critical`, etc.
+   - Anotar el número del issue (ej: #15)
+
+2. **Incluir el número del issue en la rama:**
+
+   ```bash
+   # Formato: tipo/usuario/descripcion-#numero-issue
+   git checkout -b bug/cxrommel/fix-pokemon-api-#15
+   git checkout -b hotfix/maria/security-patch-#23
+   ```
+
+3. **Referenciar el issue en commits:**
+
+   ```bash
+   git commit -m "fix: resolve pokemon API loading error (closes #15)"
+   git commit -m "hotfix: patch authentication vulnerability (fixes #23)"
+   ```
+
+4. **Mencionar el issue en el PR:**
+   - Incluir "Closes #15" o "Fixes #23" en la descripción
+   - Esto cierra automáticamente el issue al mergear
+
 #### **📋 Plantilla para PR's:**
 
 ```markdown
 ## Descripción
 
 Breve descripción de los cambios realizados
+
+## Issue Relacionado (para bugs/hotfixes)
+
+- [ ] Closes #(número del issue)
+- [ ] Fixes #(número del issue)
+- [ ] N/A - Es una nueva feature
 
 ## Tipo de cambio
 
@@ -250,9 +285,12 @@ Agregar capturas de pantalla de los cambios visuales
 - ✅ **Todos los PR's** van dirigidos a `main`
 - ✅ **Nombre descriptivo** para branches y commits
 - ✅ **Testing local** antes de crear PR
+- ✅ **Crear Issue** OBLIGATORIO para bugs/hotfixes antes de la rama
+- ✅ **Referenciar Issue** en nombre de rama y commits
 - ❌ **Nunca** hacer push directo a `main`
 - ❌ **Nunca** mergear tu propio PR sin revisión
 - ❌ **No crear** branches sin seguir el formato
+- ❌ **No crear** ramas de bug/hotfix sin Issue previo
 
 ## �🏗️ Arquitectura del Proyecto
 

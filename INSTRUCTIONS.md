@@ -39,6 +39,7 @@ Ejemplos de nombres de ramas:
 /features/cxrom/release-01
 /features/cxrom/add-super-new-way-to-use-this-hook
 /bug/cxrom/fix-routes-error
+/hotfix/cxrom/critical-security-patch
 ```
 
 Se recomienda usar prefijos como:
@@ -49,6 +50,42 @@ Se recomienda usar prefijos como:
 - `refactor/` → para mejoras o reestructuración del código
 
 Cada rama debe incluir el **nombre clave del alumno** y una breve descripción del propósito.
+
+### ⚠️ Importante: Proceso para Bugs y Hotfixes
+
+**Todas las correcciones que no sean features (bugs, hotfixes, etc.) deben seguir este proceso obligatorio:**
+
+1. **Crear un Issue en GitHub** antes de comenzar cualquier trabajo:
+   - Ir a la sección "Issues" del repositorio en GitHub
+   - Crear un nuevo issue describiendo el problema
+   - Usar las etiquetas apropiadas: `bug`, `hotfix`, `critical`, etc.
+   - Asignar el issue a la persona que lo resolverá
+
+2. **Referenciar el Issue en la rama:**
+
+   ```
+   /bug/cxrom/fix-routes-error-#15
+   /hotfix/maria/critical-security-patch-#23
+   ```
+
+3. **Referenciar el Issue en commits:**
+
+   ```bash
+   git commit -m "fix: resolve routing error in navigation component (closes #15)"
+   git commit -m "hotfix: patch security vulnerability in auth module (fixes #23)"
+   ```
+
+4. **El Pull Request debe mencionar el Issue:**
+   - Incluir "Closes #15" o "Fixes #23" en la descripción del PR
+   - Esto automáticamente cerrará el issue cuando se mergee el PR
+
+**Ejemplo de flujo completo:**
+
+1. Detectar bug → Crear Issue #15 en GitHub
+2. Crear rama: `bug/cxrom/fix-routes-error-#15`
+3. Hacer commits: `"fix: resolve navigation bug (closes #15)"`
+4. Crear PR mencionando: "This PR fixes #15"
+5. Mergear PR → Issue se cierra automáticamente
 
 ---
 
