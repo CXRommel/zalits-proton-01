@@ -1,0 +1,192 @@
+{
+  "teamInfo": {
+    "name": "ByteForge",
+    "description": "El equipo detrás de Zalits Proton. Desarrolladores apasionados forjando el futuro del código."
+  },
+  "members": [
+    {
+      "id": 1,
+      "name": "Ali",
+      "emoji": "🔥",
+      "image": null,
+      "colors": {
+        "gradientFrom": "from-orange-500",
+        "gradientTo": "to-red-500",
+        "borderColor": "border-orange-500/30",
+        "textColor": "text-orange-400",
+        "bgColor": "bg-orange-500"
+      },
+      "phrases": {
+        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "clickCount": [
+          "¡Haz clic 2 veces más para una sorpresa! 😄",
+          "¡Haz clic 1 vez más para una sorpresa! 😄"
+        ]
+      },
+      "comments": [
+        {
+          "date": "2025-10-16",
+          "text": "Los comentarios adicionales aparecerán aquí..."
+        }
+      ],
+      "joinDate": "2025-10-16"
+    },
+    {
+      "id": 2,
+      "name": "Alison",
+      "emoji": "✨",
+      "image": null,
+      "colors": {
+        "gradientFrom": "from-purple-500",
+        "gradientTo": "to-pink-500",
+        "borderColor": "border-purple-500/30",
+        "textColor": "text-purple-400",
+        "bgColor": "bg-purple-500"
+      },
+      "phrases": {
+        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "clickCount": [
+          "¡Haz clic 2 veces más para una sorpresa! 😄",
+          "¡Haz clic 1 vez más para una sorpresa! 😄"
+        ]
+      },
+      "comments": [
+        {
+          "date": "2025-10-16",
+          "text": "Los comentarios adicionales aparecerán aquí..."
+        }
+      ],
+      "joinDate": "2025-10-16"
+    },
+    {
+      "id": 3,
+      "name": "Vania",
+      "emoji": "💎",
+      "image": null,
+      "colors": {
+        "gradientFrom": "from-cyan-500",
+        "gradientTo": "to-blue-500",
+        "borderColor": "border-cyan-500/30",
+        "textColor": "text-cyan-400",
+        "bgColor": "bg-cyan-500"
+      },
+      "phrases": {
+        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "clickCount": [
+          "¡Haz clic 2 veces más para una sorpresa! 😄",
+          "¡Haz clic 1 vez más para una sorpresa! 😄"
+        ]
+      },
+      "comments": [
+        {
+          "date": "2025-10-16",
+          "text": "Los comentarios adicionales aparecerán aquí..."
+        }
+      ],
+      "joinDate": "2025-10-16"
+    },
+    {
+      "id": 4,
+      "name": "Lenny",
+      "emoji": "⚡",
+      "image": null,
+      "colors": {
+        "gradientFrom": "from-green-500",
+        "gradientTo": "to-emerald-500",
+        "borderColor": "border-green-500/30",
+        "textColor": "text-green-400",
+        "bgColor": "bg-green-500"
+      },
+      "phrases": {
+        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "clickCount": [
+          "¡Haz clic 2 veces más para una sorpresa! 😄",
+          "¡Haz clic 1 vez más para una sorpresa! 😄"
+        ]
+      },
+      "comments": [
+        {
+          "date": "2025-10-16",
+          "text": "Los comentarios adicionales aparecerán aquí..."
+        }
+      ],
+      "joinDate": "2025-10-16"
+    },
+    {
+      "id": 5,
+      "name": "Orlando",
+      "emoji": "🚀",
+      "image": null,
+      "colors": {
+        "gradientFrom": "from-yellow-500",
+        "gradientTo": "to-orange-500",
+        "borderColor": "border-yellow-500/30",
+        "textColor": "text-yellow-400",
+        "bgColor": "bg-yellow-500"
+      },
+      "phrases": {
+        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "clickCount": [
+          "¡Haz clic 2 veces más para una sorpresa! 😄",
+          "¡Haz clic 1 vez más para una sorpresa! 😄"
+        ]
+      },
+      "comments": [
+        {
+          "date": "2025-10-16",
+          "text": "Los comentarios adicionales aparecerán aquí..."
+        }
+      ],
+      "joinDate": "2025-10-16"
+    },
+    {
+      "id": 6,
+      "name": "Brandon",
+      "emoji": "⭐",
+      "image": null,
+      "colors": {
+        "gradientFrom": "from-indigo-500",
+        "gradientTo": "to-purple-500",
+        "borderColor": "border-indigo-500/30",
+        "textColor": "text-indigo-400",
+        "bgColor": "bg-indigo-500"
+      },
+      "phrases": {
+        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "clickCount": [
+          "¡Haz clic 2 veces más para una sorpresa! 😄",
+          "¡Haz clic 1 vez más para una sorpresa! 😄"
+        ]
+      },
+      "comments": [
+        {
+          "date": "2025-10-16",
+          "text": "Los comentarios adicionales aparecerán aquí..."
+        }
+      ],
+      "joinDate": "2025-10-16"
+    }
+  ],
+  "stats": [
+    {
+      "value": "6",
+      "label": "Desarrolladores",
+      "color": "text-orange-400"
+    },
+    {
+      "value": "∞",
+      "label": "Ideas",
+      "color": "text-purple-400"
+    },
+    {
+      "value": "1",
+      "label": "Proyecto",
+      "color": "text-cyan-400"
+    },
+    {
+      "value": "💯",
+      "label": "Pasión",
+      "color": "text-green-400"
+    }
+  ]
+}
