@@ -1,4 +1,4 @@
-import phrasesData from "../../data/phrases.json";
+import phrasesData from "#src/features/course/data/phrases.json";
 
 export function getRandomTitleWithRotation(
   callback,

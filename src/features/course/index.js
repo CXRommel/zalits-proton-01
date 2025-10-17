@@ -23,8 +23,8 @@
  */
 
 // Exportación principal del feature
-export { default as CoursePage } from "./CoursePage";
+export { default as CoursePage } from "#src/features/course/CoursePage";
 
-// Exportaciones adicionales si necesitas componentes específicos
-export { default as HeroSection } from "./sections/HeroSection";
-export { default as TeamSection } from "./sections/TeamSection";
+// Secciones principales
+export { default as HeroSection } from "#src/features/course/sections/HeroSection";
+export { default as TeamSection } from "#src/features/course/sections/TeamSection";

@@ -30,13 +30,13 @@ function Modal({ isOpen, onClose, title, children }) {
       />
 
       {/* Modal Content */}
-      <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border border-white/20 p-6 max-w-lg w-full mx-4 max-h-[80vh] overflow-y-auto">
+      <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border border-white/20 p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-4 sticky top-0 bg-gradient-to-br from-slate-800 to-slate-900 pb-4 border-b border-white/10">
           <h2 className="text-2xl font-bold text-white">{title}</h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors p-1"
+            className="text-gray-400 hover:text-white transition-colors p-1 hover:bg-white/10 rounded"
           >
             <svg
               className="w-6 h-6"

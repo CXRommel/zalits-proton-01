@@ -1,5 +1,5 @@
-import HeroSection from "./sections/HeroSection";
-import TeamSection from "./sections/TeamSection";
+import HeroSection from "#src/features/course/sections/HeroSection";
+import TeamSection from "#src/features/course/sections/TeamSection";
 
 function CoursePage() {
   return (

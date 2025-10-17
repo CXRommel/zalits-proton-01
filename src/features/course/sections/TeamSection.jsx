@@ -1,14 +1,14 @@
-import React from "react";
-import { Card, Avatar, Badge } from "../ui";
+import React, { useState, useEffect } from "react";
+import { Card, Avatar, Badge } from "#src/features/course/ui";
 import {
   useInteractiveCard,
-  useAnimation,
   useTitleRotation,
-} from "../shared/hooks";
-import { withClickEffects } from "../shared/hoc";
-import { useProfileImages } from "../shared/utils/imageUtils";
-import teamData from "../data/team.json";
-import byteForgeLogo from "../assets/byteforge.png";
+  useAnimation,
+} from "#src/features/course/shared/hooks";
+import { withClickEffects } from "#src/features/course/shared/hoc";
+import { useProfileImages } from "#src/features/course/shared/utils/imageUtils";
+import teamData from "#src/features/course/data/team.json";
+import byteForgeLogo from "#src/features/course/assets/byteforge.png";
 
 function TeamSection() {
   const { teamInfo, stats } = teamData;
@@ -122,11 +122,11 @@ function TeamMemberCard({ member }) {
       <Card
         onClick={handleCardClick}
         className={`
-          hover:${colors.borderColor} 
-          hover:scale-105 
-          cursor-pointer 
-          select-none 
-          transform-gpu 
+          hover:${colors.borderColor}
+          hover:scale-105
+          cursor-pointer
+          select-none
+          transform-gpu
           origin-center
           ${isPartyMode ? "party-mode border-rainbow" : ""}
           ${isAnimating ? `custom-pulse ${memberStyleId}` : ""}
@@ -170,8 +170,8 @@ function MemberAvatar({ member, isPartyMode }) {
         gradientFrom={colors.gradientFrom}
         gradientTo={colors.gradientTo}
         className={`
-          mx-auto 
-          transition-all 
+          mx-auto
+          transition-all
           duration-300
           ${isPartyMode ? "party-glow party-emoji" : ""}
         `}

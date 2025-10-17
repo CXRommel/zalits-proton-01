@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
-import { getRandomTitleWithRotation } from "../utils/phraseUtils";
+import { getRandomTitleWithRotation } from "#src/features/course/shared/utils/phraseUtils";
 
 export function useTitleRotation() {
   const [currentTitle, setCurrentTitle] = useState("");
