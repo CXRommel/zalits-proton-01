@@ -79,7 +79,180 @@ En este primer paso se establece la base del proyecto utilizando las herramienta
    pnpm build
    ```
 
-## 🏗️ Arquitectura del Proyecto
+## � Flujo de Trabajo con Git
+
+### **Reglas de Creación de Branches**
+
+Para mantener un flujo de trabajo organizado y consistente, seguimos estas reglas estrictas para la creación de ramas:
+
+#### **📋 Nomenclatura de Branches:**
+
+**Formato obligatorio:**
+
+```bash
+features/{usuario}/{nombre-del-branch}
+```
+
+#### **✅ Ejemplos correctos:**
+
+```bash
+features/cxrommel/add-user-authentication
+features/maria/implement-dark-mode
+features/jose/fix-mobile-responsive
+features/ana/update-api-endpoints
+features/carlos/optimize-performance
+```
+
+#### **❌ Ejemplos incorrectos:**
+
+```bash
+feature/user-auth          # ❌ Falta usuario
+add-dark-mode             # ❌ No sigue el formato
+features/implement-api    # ❌ Falta usuario
+cxrommel/new-feature      # ❌ Falta prefijo features/
+```
+
+### **🚀 Comandos para Crear y Trabajar con Branches:**
+
+1. **Crear y cambiar a nueva rama:**
+
+   ```bash
+   git checkout -b features/{tu-usuario}/{nombre-descriptivo}
+
+   # Ejemplo:
+   git checkout -b features/cxrommel/add-pokemon-details
+   ```
+
+2. **Confirmar que estás en la rama correcta:**
+
+   ```bash
+   git branch --show-current
+   ```
+
+3. **Hacer commits (puedes hacer tantos como necesites):**
+
+   ```bash
+   git add .
+   git commit -m "feat: add pokemon detail modal component"
+   git commit -m "style: improve modal responsive design"
+   git commit -m "fix: resolve pokemon api loading issues"
+   ```
+
+4. **Subir tu rama al repositorio:**
+
+   ```bash
+   git push origin features/{tu-usuario}/{nombre-del-branch}
+
+   # Ejemplo:
+   git push origin features/cxrommel/add-pokemon-details
+   ```
+
+### **📝 Reglas de Pull Requests (PR's)**
+
+#### **🎯 Configuración de PR's:**
+
+- **Branch destino**: Todos los PR's deben apuntar a `main` **SIEMPRE**
+- **Commits**: Puedes subir tantos commits como necesites en tu rama
+- **Revisión**: Los PR's requieren revisión antes de merge
+- **Formato**: Usar títulos descriptivos y claros
+
+#### **📋 Plantilla para PR's:**
+
+```markdown
+## Descripción
+
+Breve descripción de los cambios realizados
+
+## Tipo de cambio
+
+- [ ] 🐛 Bug fix
+- [ ] ✨ Nueva feature
+- [ ] 💄 Cambios de UI/estilo
+- [ ] ♻️ Refactoring
+- [ ] 📝 Documentación
+- [ ] ⚡ Mejora de performance
+
+## Cambios realizados
+
+- Cambio 1
+- Cambio 2
+- Cambio 3
+
+## Testing
+
+- [ ] Se realizaron pruebas locales
+- [ ] Se verificó el build (`pnpm build`)
+- [ ] Se verificó el linting (`pnpm lint`)
+- [ ] Se verificó el formato (`pnpm format:check`)
+
+## Screenshots (si aplica)
+
+Agregar capturas de pantalla de los cambios visuales
+```
+
+### **🔄 Flujo de Trabajo Completo:**
+
+1. **Sincronizar con main:**
+
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+
+2. **Crear nueva rama:**
+
+   ```bash
+   git checkout -b features/{tu-usuario}/{feature-name}
+   ```
+
+3. **Desarrollar y commitear:**
+
+   ```bash
+   # Hacer cambios...
+   git add .
+   git commit -m "descripción del cambio"
+   # Repetir según necesites
+   ```
+
+4. **Verificar calidad antes del push:**
+
+   ```bash
+   pnpm lint
+   pnpm format:check
+   pnpm build
+   ```
+
+5. **Subir cambios:**
+
+   ```bash
+   git push origin features/{tu-usuario}/{feature-name}
+   ```
+
+6. **Crear PR en GitHub:**
+   - Ir a GitHub → Abrir Pull Request
+   - Base branch: `main`
+   - Compare branch: tu rama `features/{usuario}/{nombre}`
+   - Llenar la descripción usando la plantilla
+   - Solicitar revisión del equipo
+
+7. **Después del merge:**
+   ```bash
+   git checkout main
+   git pull origin main
+   git branch -d features/{tu-usuario}/{feature-name}  # Borrar rama local
+   ```
+
+### **⚠️ Reglas Importantes:**
+
+- ✅ **Siempre** crear branches desde `main` actualizado
+- ✅ **Todos los PR's** van dirigidos a `main`
+- ✅ **Nombre descriptivo** para branches y commits
+- ✅ **Testing local** antes de crear PR
+- ❌ **Nunca** hacer push directo a `main`
+- ❌ **Nunca** mergear tu propio PR sin revisión
+- ❌ **No crear** branches sin seguir el formato
+
+## �🏗️ Arquitectura del Proyecto
 
 ### **Estructura basada en Features**
 
