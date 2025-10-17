@@ -2,6 +2,8 @@
 
 Zalits Proton es un proyecto de estudio para organizar una aplicación con React desplegando datos del API de Zalits. Este proyecto servirá como base de aprendizaje para explorar diferentes conceptos y patrones de desarrollo frontend moderno.
 
+> 📖 **Importante**: Para conocer la dinámica completa del proyecto, metodología de trabajo y estructura de colaboración, consulta el archivo **[INSTRUCTIONS.md](./INSTRUCTIONS.md)**.
+
 ## 📋 Pasos del Proyecto
 
 Este proyecto seguirá un enfoque incremental, donde cada paso añadirá nueva funcionalidad y complejidad. Los pasos se irán documentando conforme el proyecto evolucione.
