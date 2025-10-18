@@ -5,10 +5,62 @@
   },
   "members": [
     {
+      "id": 0,
+      "name": "CXRommel",
+      "title": "Master Chief",
+      "emoji": "�",
+      "image": null,
+      "isLeader": true,
+      "level": {
+        "badge": "💀",
+        "number": "????"
+      },
+      "colors": {
+        "gradientFrom": "from-black",
+        "gradientTo": "to-red-600",
+        "borderColor": "border-red-600/50",
+        "textColor": "text-red-400",
+        "bgColor": "bg-black"
+      },
+      "phrases": {
+        "default": "⚔️ Code is war. I lead from the front lines, crushing bugs and forging legends.",
+        "clickCount": [
+          "🔥 Two more clicks and I'll show you what real power looks like...",
+          "⚡ One final click... You're about to witness mastery!"
+        ],
+        "special": [
+          "💀 I don't just debug code... I annihilate it into submission.",
+          "🚀 While others code, I architect digital empires.",
+          "⚔️ Every line of code is a weapon. Every function, a victory.",
+          "🔥 I don't follow best practices... I CREATE them.",
+          "👑 Master Chief doesn't just lead the team... I AM the team.",
+          "💥 Bugs fear me. Features bow to me. Code obeys me.",
+          "🌟 I don't write code... I craft digital poetry that makes machines weep.",
+          "⚡ Speed? I AM speed. Efficiency? I DEFINE efficiency."
+        ]
+      },
+      "comments": [
+        {
+          "date": "2025-10-17",
+          "text": "Welcome to the battlefield. Here, only the strongest code survives. 🔥"
+        }
+      ],
+      "joinDate": "2025-10-17",
+      "specialAbilities": [
+        "🎯 Precision Coding",
+        "🔥 Bug Annihilation",
+        "⚡ Lightning Development"
+      ]
+    },
+    {
       "id": 1,
       "name": "Ali",
       "emoji": "🔥",
       "image": null,
+      "level": {
+        "badge": "🐡",
+        "number": 5
+      },
       "colors": {
         "gradientFrom": "from-orange-500",
         "gradientTo": "to-red-500",
@@ -36,6 +88,10 @@
       "name": "Alison",
       "emoji": "✨",
       "image": null,
+      "level": {
+        "badge": "🐡",
+        "number": 5
+      },
       "colors": {
         "gradientFrom": "from-purple-500",
         "gradientTo": "to-pink-500",
@@ -63,6 +119,10 @@
       "name": "Vania",
       "emoji": "💎",
       "image": null,
+      "level": {
+        "badge": "🐡",
+        "number": 5
+      },
       "colors": {
         "gradientFrom": "from-cyan-500",
         "gradientTo": "to-blue-500",
@@ -90,6 +150,10 @@
       "name": "Lenny",
       "emoji": "⚡",
       "image": null,
+      "level": {
+        "badge": "🐡",
+        "number": 5
+      },
       "colors": {
         "gradientFrom": "from-green-500",
         "gradientTo": "to-emerald-500",
@@ -117,6 +181,10 @@
       "name": "Orlando",
       "emoji": "🚀",
       "image": null,
+      "level": {
+        "badge": "🐡",
+        "number": 5
+      },
       "colors": {
         "gradientFrom": "from-yellow-500",
         "gradientTo": "to-orange-500",
@@ -144,6 +212,10 @@
       "name": "Brandon",
       "emoji": "⭐",
       "image": null,
+      "level": {
+        "badge": "🐡",
+        "number": 5
+      },
       "colors": {
         "gradientFrom": "from-indigo-500",
         "gradientTo": "to-purple-500",
@@ -169,7 +241,7 @@
   ],
   "stats": [
     {
-      "value": "6",
+      "value": "7",
       "label": "Desarrolladores",
       "color": "text-orange-400"
     },

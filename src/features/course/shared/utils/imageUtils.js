@@ -1,12 +1,13 @@
 import { useState, useCallback } from "react";
 
 const TEAM_POKEMON_ASSIGNMENT = {
-  Ali: 6, // Charizard
-  Lenny: 150, // Mewtwo
-  Orlando: 448, // Lucario
-  Brandon: 249, // Lugia
-  Alison: 282, // Gardevoir
-  Vania: 350, // Milotic
+  CXRommel: 487, // Giratina - The most badass legendary, Renegade Pokemon that rules the Distortion World
+  Ali: 19, // Rattata - Normal type, common low-level Pokemon
+  Lenny: 16, // Pidgey - Basic flying type, very common starter area Pokemon
+  Orlando: 10, // Caterpie - Bug type, one of the most basic Pokemon
+  Brandon: 13, // Weedle - Basic bug type, low-level Pokemon
+  Alison: 43, // Oddish - Simple grass type, common in early routes
+  Vania: 129, // Magikarp - The most humble Pokemon, weak but with potential
 };
 
 const POPULAR_POKEMON = [

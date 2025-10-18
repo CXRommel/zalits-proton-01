@@ -5,6 +5,7 @@ const badgeVariants = {
   green: "bg-green-500 text-white",
   yellow: "bg-yellow-500 text-white",
   indigo: "bg-indigo-500 text-white",
+  red: "bg-red-500 text-white",
   gray: "bg-gray-500 text-white",
 };
 
