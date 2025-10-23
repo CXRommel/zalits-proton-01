@@ -7,7 +7,7 @@ const TEAM_POKEMON_ASSIGNMENT = {
   Orlando: 10, // Caterpie - Bug type, one of the most basic Pokemon
   Brandon: 13, // Weedle - Basic bug type, low-level Pokemon
   Alison: 43, // Oddish - Simple grass type, common in early routes
-  Vania: 129, // Magikarp - The most humble Pokemon, weak but with potential
+  Vania: 720, // Magikarp - The most humble Pokemon, weak but with potential
 };
 
 const POPULAR_POKEMON = [

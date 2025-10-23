@@ -131,13 +131,17 @@
         "bgColor": "bg-cyan-500"
       },
       "phrases": {
-        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "default": "Para triunfar, hay que soñar!!",
         "clickCount": [
           "¡Haz clic 2 veces más para una sorpresa! 😄",
           "¡Haz clic 1 vez más para una sorpresa! 😄"
         ]
       },
       "comments": [
+        {
+          "date": "2025-10-16",
+          "text": "Soñar es lograr y lograr es seguir soñando."
+        },
         {
           "date": "2025-10-16",
           "text": "Los comentarios adicionales aparecerán aquí..."
