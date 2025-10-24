@@ -211,7 +211,7 @@
       "id": 6,
       "name": "Brandon",
       "emoji": "⭐",
-      "image": null,
+      "image": "https://wallpapercave.com/wp/wp4055557.png",
       "level": {
         "badge": "🐡",
         "number": 5
@@ -224,7 +224,7 @@
         "bgColor": "bg-indigo-500"
       },
       "phrases": {
-        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "default": "Me volvi adicto a tomar cafe y escribir codigo",
         "clickCount": [
           "¡Haz clic 2 veces más para una sorpresa! 😄",
           "¡Haz clic 1 vez más para una sorpresa! 😄"
@@ -232,8 +232,8 @@
       },
       "comments": [
         {
-          "date": "2025-10-16",
-          "text": "Los comentarios adicionales aparecerán aquí..."
+          "date": "2025-10-23",
+          "text": "En busca de mejorar cada dia mis habilidades como desarrollador."
         }
       ],
       "joinDate": "2025-10-16"
