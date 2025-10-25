@@ -180,7 +180,7 @@
       "id": 5,
       "name": "Orlando",
       "emoji": "🚀",
-      "image": null,
+      "image": "https://forbes.co/_next/image?url=https%3A%2F%2Fcdn.forbes.co%2F2021%2F07%2FJim-Morrison-Twitter.jpg&w=3840&q=75",
       "level": {
         "badge": "🐡",
         "number": 5
@@ -193,7 +193,7 @@
         "bgColor": "bg-yellow-500"
       },
       "phrases": {
-        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "default": "La solución más efectiva es a menudo la más simple",
         "clickCount": [
           "¡Haz clic 2 veces más para una sorpresa! 😄",
           "¡Haz clic 1 vez más para una sorpresa! 😄"
@@ -201,8 +201,8 @@
       },
       "comments": [
         {
-          "date": "2025-10-16",
-          "text": "Los comentarios adicionales aparecerán aquí..."
+          "date": "2025-10-25",
+          "text": "Mejorar la capacidad de análisis para definir acciones claras"
         }
       ],
       "joinDate": "2025-10-16"
