@@ -87,7 +87,7 @@
       "id": 2,
       "name": "Alison",
       "emoji": "✨",
-      "image": null,
+      "image": "https://images.unsplash.com/photo-1591909225194-3b804fc84477?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
       "level": {
         "badge": "🐡",
         "number": 5
@@ -100,7 +100,7 @@
         "bgColor": "bg-purple-500"
       },
       "phrases": {
-        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "default": "La estabilidad viene de saber que, pase lo que pase, siempre hay una solución",
         "clickCount": [
           "¡Haz clic 2 veces más para una sorpresa! 😄",
           "¡Haz clic 1 vez más para una sorpresa! 😄"
@@ -108,11 +108,11 @@
       },
       "comments": [
         {
-          "date": "2025-10-16",
-          "text": "Los comentarios adicionales aparecerán aquí..."
+          "date": "2025-10-27",
+          "text": "Solo hay una vida respira..."
         }
       ],
-      "joinDate": "2025-10-16"
+      "joinDate": "2025-10-27"
     },
     {
       "id": 3,
