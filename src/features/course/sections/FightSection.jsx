@@ -1,0 +1,1 @@
+export { FightSection } from "./fight";

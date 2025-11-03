@@ -1,0 +1,798 @@
+{
+  "_id": "690190601f69d1ac0fe60e6f",
+  "name": "Billy Blanco",
+  "tokens": [
+    {
+      "type": 0,
+      "id": "019a2e1a-a2e2-7077-885a-22253af6ba66"
+    },
+    {
+      "type": 1,
+      "id": "019a2e1b-5052-753a-b067-bcb7bf203e1b"
+    }
+  ],
+  "profile": {
+    "logo": {
+      "url": "https://zalits-hermes-bucket-development.sfo3.cdn.digitaloceanspaces.com/v2/avatars/billy_blanco.jpg",
+      "container": "circular",
+      "shadow": "lg"
+    },
+    "slogan": {
+      "en": "Burgers worth melting for",
+      "es": "Burgers worth melting for"
+    }
+  },
+  "intl": {
+    "timezone": "America/Mexico_City",
+    "languages": ["es", "en"],
+    "currencies": ["mxn", "usd"],
+    "defaultLanguage": "es",
+    "defaultCurrency": "mxn"
+  },
+  "address": {
+    "street": "Av. Hidalgo 182, Colonia Obrera",
+    "city": "Ensenada",
+    "state": "BC",
+    "zip": "22839",
+    "country": "Mexico"
+  },
+  "contact": {
+    "phone": "+52 646 245 8921",
+    "email": "billyblanco.ens@gmail.com",
+    "social": {
+      "instagram": "https://www.instagram.com/billyblanco_mx",
+      "facebook": "https://www.facebook.com/billyblancoburgers"
+    }
+  },
+  "theme": {
+    "colors": {
+      "primary": "#e8711e",
+      "primaryLight": "#ff8c42",
+      "primaryDark": "#c25f15",
+      "accent": "#ffa856",
+      "accentLight": "#ffbd7a",
+      "accentDark": "#e89440",
+      "background": "#f1eede",
+      "backgroundSecondary": "#faf6ed",
+      "backgroundTertiary": "#e8e2cf",
+      "textPrimary": "#2d2416",
+      "textSecondary": "#6b5d4f",
+      "success": "#10b981",
+      "error": "#ef4444"
+    },
+    "typography": {
+      "customFonts": [
+        {
+          "name": "Inter",
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800\u0026display=swap"
+        },
+        {
+          "name": "Raleway",
+          "url": "https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900\u0026display=swap"
+        }
+      ],
+      "fontFamily": {
+        "global": "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+        "sectionNav": "'Raleway', -apple-system, BlinkMacSystemFont, sans-serif",
+        "sectionTitle": "'Raleway', -apple-system, BlinkMacSystemFont, sans-serif",
+        "sectionDescription": "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+        "productTitle": "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+        "productDescription": "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+        "productPrice": "'Raleway', -apple-system, BlinkMacSystemFont, sans-serif",
+        "primary": "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+        "display": "'Raleway', -apple-system, BlinkMacSystemFont, sans-serif"
+      },
+      "fontWeight": {
+        "normal": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700",
+        "extrabold": "800"
+      }
+    },
+    "borderRadius": {
+      "md": "0.75rem",
+      "lg": "1rem",
+      "xl": "1.25rem",
+      "full": "9999px"
+    },
+    "components": {
+      "header": {
+        "background": "linear-gradient(180deg, #faf6ed 0%, #f1eede 50%, #e8e2cf 100%)",
+        "textColor": "#e8711e",
+        "borderColor": "rgba(232, 113, 30, 0.2)"
+      },
+      "navigation": {
+        "background": "#ffffff",
+        "activeBackground": "#e8711e",
+        "activeTextColor": "#ffffff",
+        "inactiveBackground": "rgba(232, 113, 30, 0.08)",
+        "inactiveTextColor": "#2d2416",
+        "hoverBackground": "rgba(232, 113, 30, 0.15)",
+        "borderColor": "rgba(232, 113, 30, 0.2)",
+        "borderRadius": "1.5rem"
+      },
+      "bottomNav": {
+        "background": "#ffffff",
+        "borderColor": "rgba(232, 113, 30, 0.15)",
+        "activeBackground": "#e8711e",
+        "activeTextColor": "#ffffff",
+        "inactiveTextColor": "#6b5d4f",
+        "hoverTextColor": "#e8711e"
+      },
+      "menuItem": {
+        "background": "#ffffff",
+        "hoverBackground": "#faf6ed",
+        "borderColor": "rgba(232, 113, 30, 0.1)",
+        "titleColor": "#2d2416",
+        "descriptionColor": "#6b5d4f",
+        "priceColor": "#e8711e",
+        "borderRadius": "0.75rem"
+      },
+      "section": {
+        "badgeBackground": "#e8711e",
+        "headerBackground": "#fef3ee",
+        "headerTextColor": "#e8711e",
+        "descriptionColor": "#6b5d4f",
+        "dividerColor": "rgba(232, 113, 30, 0.1)",
+        "borderRadius": "0.5rem",
+        "fontSize": "1.5rem",
+        "fontWeight": "700"
+      },
+      "button": {
+        "primaryBackground": "#e8711e",
+        "primaryText": "#ffffff",
+        "primaryHover": "#c25f15",
+        "secondaryBackground": "#faf6ed",
+        "secondaryText": "#2d2416",
+        "secondaryHover": "#e8e2cf",
+        "borderRadius": "0.75rem"
+      },
+      "zalitsButton": {
+        "background": "transparent",
+        "border": "transparent",
+        "iconColor": "#e8711e",
+        "logoOpacity": "0.9"
+      },
+      "modal": {
+        "background": "#ffffff",
+        "overlayBackground": "rgba(45, 36, 22, 0.7)",
+        "borderRadius": "1rem",
+        "headerColor": "#2d2416"
+      }
+    }
+  },
+  "schedule": [
+    {
+      "days": [1, 2, 3, 4, 5],
+      "open": "11:00",
+      "time": "11"
+    },
+    {
+      "days": [6, 0],
+      "open": "10:00",
+      "time": "13"
+    }
+  ],
+  "menus": [
+    {
+      "name": {
+        "en": "Main Menu",
+        "es": "Menú Principal"
+      },
+      "sections": [
+        {
+          "name": {
+            "en": "Burgers",
+            "es": "Hamburguesas"
+          },
+          "description": {
+            "en": "All burgers include fries",
+            "es": "Todas nuestras burgers incluyen papas"
+          },
+          "display": 2,
+          "icon": "https://img.icons8.com/dotty/100/hamburger.png",
+          "items": [
+            {
+              "id": 1,
+              "type": 1,
+              "display": 0,
+              "name": {
+                "en": "Cheeseburger",
+                "es": "Cheeseburger"
+              },
+              "description": {
+                "en": "Classic burger with American cheese, caramelized onion, and our famous Billy Dressing",
+                "es": "Hamburguesa clásica con queso americano, cebolla caramelizada y nuestro icónico Billy Dressing"
+              },
+              "price": {
+                "mxn": 160,
+                "usd": 9
+              }
+            },
+            {
+              "id": 2,
+              "type": 1,
+              "name": {
+                "en": "Double Cheeseburger",
+                "es": "Double Cheeseburger"
+              },
+              "description": {
+                "en": "Same as our classic burger, but with double meat and double cheese because more is never enough",
+                "es": "Igual que nuestra hamburguesa clásica, pero con el doble de carne y doble queso porque ¡Nunca es suficiente!"
+              },
+              "price": {
+                "mxn": 180,
+                "usd": 10
+              }
+            },
+            {
+              "id": 3,
+              "type": 1,
+              "name": {
+                "en": "Blanco Chicken",
+                "es": "Blanco Chicken"
+              },
+              "description": {
+                "en": "Crispy chicken, white cheese, and tartar sauce",
+                "es": "Crispy chicken, queso blanco y salsa tártara chiltepin"
+              },
+              "price": {
+                "mxn": 180,
+                "usd": 10
+              }
+            },
+            {
+              "id": 4,
+              "type": 1,
+              "name": {
+                "en": "Bacon BBQ",
+                "es": "Bacon BBQ"
+              },
+              "description": {
+                "en": "Beef patty, bacon, smoked BBQ onion rings \u0026 white cheese and yellow cheese",
+                "es": "Pattie de res, tocino, smoked BBQ onion rings \u0026 queso blanco y amarillo"
+              },
+              "price": {
+                "mxn": 180,
+                "usd": 10
+              }
+            },
+            {
+              "id": 5,
+              "type": 1,
+              "name": {
+                "en": "Louisiana Hot Chicken",
+                "es": "Louisiana Hot Chicken"
+              },
+              "description": {
+                "en": "Crispy chicken, Louisiana hot sauce, sour pickles, white cheese \u0026 garlic n' lemon dressing",
+                "es": "Crispy chicken, Louisiana hot sauce, sour pickles, queso blanco \u0026 garlic n' lemon dressing"
+              },
+              "price": {
+                "mxn": 190,
+                "usd": 10.5
+              }
+            },
+            {
+              "id": 6,
+              "type": 1,
+              "name": {
+                "en": "Portobello",
+                "es": "Portobello"
+              },
+              "description": {
+                "en": "Portobello, white cheese, spinach, onion marmalade and Billy dressing",
+                "es": "Portobello, queso blanco, espinaca, mermelada de cebolla y Billy dressing"
+              },
+              "price": {
+                "mxn": 150,
+                "usd": 8.5
+              }
+            },
+            {
+              "id": 7,
+              "type": 1,
+              "name": {
+                "en": "Blanco Fries",
+                "es": "Blanco Fries"
+              },
+              "description": {
+                "en": "French fries with American cheese, bacon, caramelized onion and Billy Dressing",
+                "es": "Papas fritas con queso americano, tocino, cebolla caramelizada \u0026 Billy Dressing"
+              },
+              "price": {
+                "mxn": 150,
+                "usd": 8.5
+              }
+            },
+            {
+              "id": 8,
+              "type": 1,
+              "name": {
+                "en": "Tapatio Corn",
+                "es": "Tapatio Corn"
+              },
+              "description": {
+                "en": "Yellow corn, Tapatio Dressing, parmesan cheese \u0026 yellow chili",
+                "es": "Elote de elote amarillo frito, Tapatio Dressing, queso parmesano \u0026 limón amarillo"
+              },
+              "price": {
+                "mxn": 120,
+                "usd": 6.5
+              }
+            },
+            {
+              "id": 9,
+              "type": 1,
+              "name": {
+                "en": "Slider",
+                "es": "Slider"
+              },
+              "description": {
+                "en": "Mini version of our famous Cheeseburger, but for $10.00 more make it chicken",
+                "es": "Igual de increíble que nuestra Cheeseburger, pero versión mini — por $10.00 más hazla de pollo"
+              },
+              "price": {
+                "mxn": 120,
+                "usd": 6.5
+              }
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Extras",
+            "es": "Extras"
+          },
+          "display": 2,
+          "icon": "https://img.icons8.com/dotty/100/cheese.png",
+          "items": [
+            {
+              "id": 10,
+              "type": 3,
+              "name": {
+                "en": "Billy Dressing",
+                "es": "Billy Dressing"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 11,
+              "type": 3,
+              "name": {
+                "en": "Billy Tapatio",
+                "es": "Billy Tapatio"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 12,
+              "type": 3,
+              "name": {
+                "en": "Smoked BBQ",
+                "es": "Smoked BBQ"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 13,
+              "type": 3,
+              "name": {
+                "en": "Sweet Mustard",
+                "es": "Sweet Mustard"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 14,
+              "type": 3,
+              "name": {
+                "en": "Garlic \u0026 Lemon Dressing",
+                "es": "Garlic \u0026 Lemon Dressing"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 15,
+              "type": 3,
+              "name": {
+                "en": "Chilitos Güeritos",
+                "es": "Chilitos Güeritos"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 16,
+              "type": 3,
+              "name": {
+                "en": "Pepinillos",
+                "es": "Pepinillos"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 17,
+              "type": 3,
+              "name": {
+                "en": "Veggies",
+                "es": "Veggies"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 18,
+              "type": 3,
+              "name": {
+                "en": "Cheese",
+                "es": "Queso"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 19,
+              "type": 3,
+              "name": {
+                "en": "Bacon",
+                "es": "Tocino"
+              },
+              "price": {
+                "mxn": 35,
+                "usd": 2
+              }
+            },
+            {
+              "id": 20,
+              "type": 3,
+              "name": {
+                "en": "Sour Pickles",
+                "es": "Sour Pickles"
+              },
+              "price": {
+                "mxn": 25,
+                "usd": 1.5
+              }
+            },
+            {
+              "id": 21,
+              "type": 3,
+              "name": {
+                "en": "Onion Rings",
+                "es": "Onion Rings"
+              },
+              "price": {
+                "mxn": 35,
+                "usd": 2
+              }
+            },
+            {
+              "id": 22,
+              "type": 3,
+              "name": {
+                "en": "Hash Brown Bites",
+                "es": "Hash Brown Bites"
+              },
+              "price": {
+                "mxn": 35,
+                "usd": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Treats \u0026 Drinks",
+            "es": "Treats \u0026 Drinks"
+          },
+          "display": 2,
+          "icon": "https://img.icons8.com/dotty/100/orange-juice.png",
+          "items": [
+            {
+              "id": 23,
+              "type": 3,
+              "name": {
+                "en": "Sodas",
+                "es": "Sodas"
+              },
+              "price": {
+                "mxn": 40,
+                "usd": 2.25
+              }
+            },
+            {
+              "id": 24,
+              "type": 3,
+              "name": {
+                "en": "Topochico",
+                "es": "Topochico"
+              },
+              "price": {
+                "mxn": 45,
+                "usd": 2.5
+              }
+            },
+            {
+              "id": 25,
+              "type": 3,
+              "name": {
+                "en": "Kombucha",
+                "es": "Kombucha"
+              },
+              "price": {
+                "mxn": 80,
+                "usd": 4.5
+              }
+            },
+            {
+              "id": 26,
+              "type": 3,
+              "name": {
+                "en": "Pink Lemonade",
+                "es": "Pink Lemonade"
+              },
+              "price": {
+                "mxn": 45,
+                "usd": 2.5
+              }
+            },
+            {
+              "id": 27,
+              "type": 3,
+              "name": {
+                "en": "Orange Juice",
+                "es": "Jugo de Naranja"
+              },
+              "price": {
+                "mxn": 40,
+                "usd": 2.25
+              }
+            },
+            {
+              "id": 28,
+              "type": 1,
+              "name": {
+                "en": "Malteada",
+                "es": "Malteada"
+              },
+              "description": {
+                "en": "Vanilla, Strawberry, Chocolate, Cookies n' Cream",
+                "es": "Vainilla, Fresa, Chocolate, Cookies n' Cream"
+              },
+              "price": {
+                "mxn": 80,
+                "usd": 4.5
+              }
+            },
+            {
+              "id": 29,
+              "type": 1,
+              "name": {
+                "en": "Billy Milk",
+                "es": "Billy Milk"
+              },
+              "description": {
+                "en": "Classic 'chocomil' ideal for breakfast",
+                "es": "Clásico 'chocomil' ideal pal' desayuno"
+              },
+              "price": {
+                "mxn": 40,
+                "usd": 2.25
+              }
+            },
+            {
+              "id": 30,
+              "type": 3,
+              "name": {
+                "en": "Coffee",
+                "es": "Coffee"
+              },
+              "price": {
+                "mxn": 55,
+                "usd": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Desserts",
+            "es": "Desserts"
+          },
+          "display": 2,
+          "icon": "https://img.icons8.com/dotty/80/ice-cream-bowl.png",
+          "items": [
+            {
+              "id": 31,
+              "type": 1,
+              "name": {
+                "en": "Ice Cream Sandwich",
+                "es": "Ice Cream Sandwich"
+              },
+              "description": {
+                "en": "Vanilla ice cream between two chocolate cookies",
+                "es": "Helado de vainilla entre dos galletas de chocolate"
+              },
+              "price": {
+                "mxn": 60,
+                "usd": 3.5
+              }
+            },
+            {
+              "id": 32,
+              "type": 1,
+              "name": {
+                "en": "S'more",
+                "es": "S'more"
+              },
+              "description": {
+                "en": "Toasted marshmallow, chocolate, and graham crackers",
+                "es": "Malvavisco tostado, chocolate y galletas graham"
+              },
+              "price": {
+                "mxn": 70,
+                "usd": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "survey": {
+    "enabled": false,
+    "title": {
+      "en": "Tell us what you think!",
+      "es": "¡Cuéntanos qué piensas!"
+    },
+    "description": {
+      "en": "Your opinion helps us serve you better. Take a moment to share your experience with us!",
+      "es": "Tu opinión nos ayuda a servirte mejor. ¡Tómate un momento para compartir tu experiencia con nosotros!"
+    },
+    "questions": [
+      {
+        "id": 1,
+        "type": 3,
+        "required": true,
+        "question": {
+          "en": "How was your experience at Billy Blanco?",
+          "es": "¿Cómo fue tu experiencia en Billy Blanco?"
+        },
+        "maxStars": 5
+      },
+      {
+        "id": 2,
+        "type": 3,
+        "required": true,
+        "question": {
+          "en": "Rate our burger quality",
+          "es": "Califica la calidad de nuestras hamburguesas"
+        },
+        "maxStars": 5
+      },
+      {
+        "id": 3,
+        "type": 2,
+        "required": true,
+        "question": {
+          "en": "Which burger did you try?",
+          "es": "¿Qué hamburguesa probaste?"
+        },
+        "options": [
+          {
+            "en": "Billy Burger",
+            "es": "Billy Burger"
+          },
+          {
+            "en": "Doble Billy",
+            "es": "Doble Billy"
+          },
+          {
+            "en": "Billy Bacon",
+            "es": "Billy Bacon"
+          },
+          {
+            "en": "Billy Queso",
+            "es": "Billy Queso"
+          },
+          {
+            "en": "Billy Jalapeño",
+            "es": "Billy Jalapeño"
+          },
+          {
+            "en": "Other",
+            "es": "Otra"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "type": 1,
+        "required": false,
+        "question": {
+          "en": "What's your favorite item on our menu?",
+          "es": "¿Cuál es tu platillo favorito de nuestro menú?"
+        },
+        "placeholder": {
+          "en": "e.g., Billy Burger, Papas Billy...",
+          "es": "ej., Billy Burger, Papas Billy..."
+        }
+      },
+      {
+        "id": 5,
+        "type": 2,
+        "required": false,
+        "question": {
+          "en": "Would you recommend Billy Blanco to your friends?",
+          "es": "¿Recomendarías Billy Blanco a tus amigos?"
+        },
+        "options": [
+          {
+            "en": "Absolutely!",
+            "es": "¡Por supuesto!"
+          },
+          {
+            "en": "Probably",
+            "es": "Probablemente"
+          },
+          {
+            "en": "Maybe",
+            "es": "Tal vez"
+          },
+          {
+            "en": "Not sure",
+            "es": "No estoy seguro"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "type": 4,
+        "required": false,
+        "question": {
+          "en": "Any suggestions or comments?",
+          "es": "¿Alguna sugerencia o comentario?"
+        },
+        "placeholder": {
+          "en": "We'd love to hear from you...",
+          "es": "Nos encantaría escucharte..."
+        },
+        "rows": 4
+      }
+    ],
+    "submitButton": {
+      "en": "Submit Feedback",
+      "es": "Enviar Opinión"
+    },
+    "thankYouMessage": {
+      "en": "Thanks for your feedback! 🍔",
+      "es": "¡Gracias por tu opinión! 🍔"
+    }
+  }
+}
