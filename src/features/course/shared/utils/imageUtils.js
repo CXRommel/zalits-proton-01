@@ -3,7 +3,7 @@ import { useState, useCallback } from "react";
 const TEAM_POKEMON_ASSIGNMENT = {
   CXRommel: 487, // Giratina - The most badass legendary, Renegade Pokemon that rules the Distortion World
   Ali: 19, // Rattata - Normal type, common low-level Pokemon
-  Lenny: 16, // Pidgey - Basic flying type, very common starter area Pokemon
+  Lenny: 132, // Ditto - Normal type, takes the form of an amorphous purple figure.
   Orlando: 10, // Caterpie - Bug type, one of the most basic Pokemon
   Brandon: 13, // Weedle - Basic bug type, low-level Pokemon
   Alison: 43, // Oddish - Simple grass type, common in early routes
