@@ -56,7 +56,7 @@
       "id": 1,
       "name": "Ali",
       "emoji": "🔥",
-      "image": null,
+      "image": "https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/c3a50b28965369.55db9ce8168e0.jpg",
       "level": {
         "badge": "🐡",
         "number": 5
@@ -69,7 +69,7 @@
         "bgColor": "bg-orange-500"
       },
       "phrases": {
-        "default": "Agrega tu frase favorita aquí - algo que te defina como desarrollador",
+        "default": "Take the control and get over here!!!!!!!🔥",
         "clickCount": [
           "¡Haz clic 2 veces más para una sorpresa! 😄",
           "¡Haz clic 1 vez más para una sorpresa! 😄"
