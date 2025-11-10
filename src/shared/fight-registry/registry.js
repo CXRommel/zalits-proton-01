@@ -39,6 +39,7 @@
 // Example components (provided as reference)
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
+import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
 
 // TODO: Import your component here
 // Example:
@@ -67,6 +68,15 @@ const componentRegistry = [
     description:
       "A countdown timer with start, pause, reset, and preset functionality. Shows progress bar.",
     Component: TimerComponent,
+  },
+
+  {
+    id: "menu-billy-blanco",
+    name: "Menu Billy Blanco",
+    author: "Alison Euridice Montufar Pina",
+    description:
+      "Menú de restaurante que muestra los platillos disponibles con sus precios e imágenes.",
+    Component: MenuBillyBlanco,
   },
 
   // TODO: Add your component registration here
