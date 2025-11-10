@@ -25,7 +25,6 @@ function MenuDonajiComponent() {
   const colors = theme.colors || {};
   const sections = menuData.menus?.[0]?.sections || [];
 
-  // Efecto para animación de entrada
   useEffect(() => setMounted(true), []);
 
   return (
@@ -184,7 +183,7 @@ function SectionItems({ section, lang, curr, theme, mounted }) {
                       )
                     }
                   >
-                    {lang === "es" ? "Agregar" : "Add"}
+                    +
                   </button>
                 </div>
               </div>
@@ -196,7 +195,6 @@ function SectionItems({ section, lang, curr, theme, mounted }) {
   );
 }
 
-// 🧱 Encabezado
 function HeaderMenu({ menuData, theme, colors, lang, curr, setLang, setCurr }) {
   return (
     <header
@@ -273,7 +271,6 @@ function HeaderMenu({ menuData, theme, colors, lang, curr, setLang, setCurr }) {
   );
 }
 
-// 🧾 Footer
 function FooterMenu({ menuData, theme, colors }) {
   return (
     <footer
