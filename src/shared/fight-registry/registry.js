@@ -39,7 +39,7 @@
 // Example components (provided as reference)
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
-import {MenuComponent} from '#src/features/lenn/menu-components';
+import {MenuComponent} from '#src/features/lenn/menu';
 
 // TODO: Import your component here
 // Example:
