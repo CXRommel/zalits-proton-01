@@ -39,6 +39,7 @@
 // Example components (provided as reference)
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
+import { BrandonMenuComponent } from "#src/features/brandon-menu";
 
 // TODO: Import your component here
 // Example:
@@ -78,6 +79,13 @@ const componentRegistry = [
   //   description: 'This component does something amazing!',
   //   Component: MyComponent,
   // },
+  {
+    id: 'brandon-menu',
+    name: 'Brandon Menu Component',
+    author: 'BrandonFnts',
+    description: 'A simple menu component to show the menu of a restaurant.',
+    Component: BrandonMenuComponent,
+  }
 ];
 
 // ============================================================================
