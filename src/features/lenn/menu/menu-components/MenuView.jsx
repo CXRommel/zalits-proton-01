@@ -59,7 +59,7 @@ export default function MenuView() {
         slogan={client.profile.slogan[lang]}
         logo={client.profile.logo}
         name={client.name}
-        size={180}
+        size="lg"
       />
 
       <div className="mt-4 grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-4">
