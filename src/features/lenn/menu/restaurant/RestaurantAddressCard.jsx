@@ -1,7 +1,7 @@
-export function RestaurantAddressCard({ address }) {
+export function RestaurantAddressCard({ address, ...props }) {
   const { street, city, state, zip, country } = address;
   return (
-    <div className="">
+    <div {...props}>
       <h1 className="text-lg">
         <p>
           <span>📌</span> {street}, {zip}

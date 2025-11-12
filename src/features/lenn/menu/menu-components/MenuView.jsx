@@ -46,6 +46,11 @@ export default function MenuView() {
   }, []);
   //#endregion
 
+  //#region styles
+  const cardStyle =
+    "px-6 py-3 bg-amber-100 hover:bg-amber-200/30 text-lg text-amber-800 rounded-lg border-2 border-amber-300 hover:border-amber-400 transition-all duration-200";
+  //#endregion
+
   return (
     <div className=" w-full m-auto sm:w-8/12 md:m-auto bg-amber-50">
       <IntlManager
@@ -62,9 +67,9 @@ export default function MenuView() {
         size="lg"
       />
 
-      <div className="mt-4 grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-4">
-        <RestaurantAddressCard address={client.address} />
-        <RestaurantContactCard contact={client.contact} />
+      <div className="m-4 grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-4">
+        <RestaurantAddressCard className={cardStyle} address={client.address} />
+        <RestaurantContactCard className={cardStyle} contact={client.contact} />
       </div>
 
       <div>

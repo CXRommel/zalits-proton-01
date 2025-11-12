@@ -1,4 +1,4 @@
-export function RestaurantContactCard({ contact }) {
+export function RestaurantContactCard({ contact, ...props }) {
   const { phone, email, social } = contact;
   const elements = [];
 
@@ -17,7 +17,7 @@ export function RestaurantContactCard({ contact }) {
   }
 
   return (
-    <div className="w-full px-4">
+    <div {...props}>
       <p className="break-words">
         <span>☎️</span> <a href={`tel:${phone}`}>{phone}</a>
       </p>
