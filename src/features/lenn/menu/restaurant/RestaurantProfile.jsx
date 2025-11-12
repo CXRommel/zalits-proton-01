@@ -27,9 +27,7 @@ export function RestaurantProfile({
     <div className="grid grid-cols-1 place-items-center">
       {shouldShowImage ? (
         <img
-          src={
-            "https://encrypted-tbn0..com/images?q=tbn:ANd9GcQUZK5gi1clbPagXVx8PLkTK8qhlBCjve9oRw&s"
-          }
+          src={logo.url}
           alt={name}
           width={size}
           height={size}
