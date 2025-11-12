@@ -47,7 +47,7 @@ export default function MenuView() {
   //#endregion
 
   return (
-    <div className=" w-full m-auto sm:w-8/12 md:m-auto">
+    <div className=" w-full m-auto sm:w-8/12 md:m-auto bg-amber-50">
       <IntlManager
         supportCurrencies={supportCurrencies}
         supportLangs={supportLangs}

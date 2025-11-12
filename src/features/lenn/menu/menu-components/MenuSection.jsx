@@ -23,7 +23,7 @@ export function MenuSection({ section, lang, currency }) {
                 </div>
               </summary>
               {item.description && (
-                <p className="px-10 py-2 text-gray-400 text-xs italic">
+                <p className="px-10 py-2 text-xs italic">
                   {item.description[lang]}
                 </p>
               )}

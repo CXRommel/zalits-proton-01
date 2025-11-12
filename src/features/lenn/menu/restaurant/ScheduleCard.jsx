@@ -54,12 +54,12 @@ export function ScheduleCard({ schedule, lang }) {
 
   return (
     <section className="py-4">
-      <div className="text-2xl  text-white">
+      <div className="text-2xl">
         <details className="">
           <summary className="pb-4 marker:text-neutral-50/0 ">
             <p className="w-full text-center">
               🕒 Ahora mismo esta {isOpen ? "abierto" : "cerrado"}{" "}
-              <span className="text-sm text-gray-500 hover:cursor-pointer">
+              <span className="text-sm  hover:cursor-pointer">
                 (ver horarios)
               </span>
             </p>

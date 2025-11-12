@@ -7,9 +7,9 @@ export function RestaurantContactCard({ contact }) {
       elements.push(
         <a className="w-fit" key={key} href={social[key]}>
           <img
-            alt={`https://www.google.com/s2/favicons?domain=${key}.com&sz=128`}
+            alt={`${key} social link`}
             src={`https://www.google.com/s2/favicons?domain=${key}.com&sz=128`}
-            className="w-10"
+            className="w-10 h-10"
           />
         </a>
       );
@@ -17,11 +17,11 @@ export function RestaurantContactCard({ contact }) {
   }
 
   return (
-    <div className="w-full text-lg text-white m-auto">
-      <p>
+    <div className="w-full px-4">
+      <p className="break-words">
         <span>☎️</span> <a href={`tel:${phone}`}>{phone}</a>
       </p>
-      <p>
+      <p className="break-words">
         <span>📧</span> <a href={`mailto:${email}`}>{email}</a>
       </p>
       <div
