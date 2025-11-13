@@ -21,30 +21,12 @@ function BrandonMenuComponent() {
   }
 
   return (
-    <div className="text-white bg-gray-800 p-4 space-y-6">
-      <div className="grid grid-cols-2 place-content-center">
-        <select className="w-fit" id="lang-select" value={currentLang} onChange={handleLangChange}>
-          {intl.languages.map((langCode) => (
-            <option key={langCode} value={langCode}>
-              {langCode.toUpperCase()}
-            </option>
-          ))}
-        </select>
-
-        <select className="w-fit place-self-end" id="currency-select" value={currentCurrency} onChange={handleCurrencyChange}>
-          {intl.currencies.map((currencyCode) => (
-            <option key={currencyCode} value={currencyCode}>
-              {currencyCode.toUpperCase()}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <ProfileSection profile={profile} name={name} lang={currentLang} />
+    <div className="bg-gray-900 p-4 md:p-8 space-y-8 min-h-screen">
+      <ProfileSection profile={profile} name={name} lang={currentLang} languages={intl.languages} handleLangChange={handleLangChange}/>
       <AddressSection address={address} lang={currentLang}/>
       <ContactSection contact={contact} lang={currentLang}/>
       <ScheduleSection schedule={schedule} lang={currentLang}/>
-      <MenuSection menus={menus} lang={currentLang} currency={currentCurrency} />
+      <MenuSection menus={menus} lang={currentLang} currency={currentCurrency} currencies={intl.currencies} handleCurrencyChange={handleCurrencyChange}/>
     </div>
   );
 }

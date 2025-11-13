@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const tableHeaders = {
   es: {
     name: "Nombre",
@@ -20,59 +22,135 @@ function MenuItemsList({ items, lang, currency }) {
 
   const tableRows = items.map((item) => {
     return (
-      <tr className="border border-gray-300 dark:border-gray-600" key={item.id}>
-        <td>{item.name[lang]}</td>
-        <td>{item.description ? item.description[lang] : ""}</td>
-        <td >{item.price ? `$${item.price[currency]}` : ""}</td>
+      <tr className="block md:table-row border-b border-gray-700" key={item.id}>
+        <td className="block md:table-cell p-3 border-b border-gray-700 md:border-b-0">
+          <span className="md:hidden font-medium text-gray-400 mr-2">
+            {headers.name}:
+          </span>
+          <span className="font-medium text-white">
+            {item.name[lang]}
+          </span>
+        </td>
+
+        <td className="block md:table-cell p-3 border-b border-gray-700 md:border-b-0">
+          <span className="md:hidden font-medium text-gray-400 mr-2">
+            {headers.description}:
+          </span>
+          <span className="text-sm text-gray-300">
+            {item.description ? item.description[lang] : ""}
+          </span>
+        </td>
+
+        <td className="block md:table-cell p-3 text-left md:text-right">
+          <span className="md:hidden font-medium text-gray-400 mr-2">
+            {headers.price}:
+          </span>
+          <span className="font-semibold text-white">
+            {item.price ? `$${item.price[currency]}` : ""}
+          </span>
+        </td>
       </tr>
     );
   });
 
   return (
-    <table className="border-collapse border-spacing-1 border border-gray-400 dark:border-gray-500 table-auto">
-      <thead>
-        <tr className="border border-gray-300 dark:border-gray-600">
-          <th>{headers.name}</th>
-          <th>{headers.description}</th>
-          <th>{headers.price}</th>
+    <table className="w-full">
+      <thead className="hidden md:table-header-group">
+        <tr>
+          <th className="p-3 bg-gray-700 text-left font-semibold uppercase text-sm text-gray-300 border-b-2 border-gray-700">
+            {headers.name}
+          </th>
+          <th className="p-3 bg-gray-700 text-left font-semibold uppercase text-sm text-gray-300 border-b-2 border-gray-700">
+            {headers.description}
+          </th>
+          <th className="p-3 bg-gray-700 text-right font-semibold uppercase text-sm text-gray-300 border-b-2 border-gray-700">
+            {headers.price}
+          </th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="block md:table-row-group">
         {tableRows}
       </tbody>
     </table>
   );
 }
 
-function MenuHeader({ menuItem, lang, currency }) {
+function MenuHeader({ menuItem, lang, currency, currencies, handleCurrencyChange }) {
   const { sections } = menuItem;
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const menuHeaderSections = sections.map((section) => {
-    return (
-      <section className="bg-amber-500 py-4 rounded-3xl md:mx-auto max-w-screen-md border-2 border-gray-800 mt-3 place-items-center" key={section.name[lang]}>
-        <h2>{section.name[lang]}</h2>
-        <img src={section.icon} alt={section.name[lang] + " icon."} />
-        {section.description && <p>{section.description[lang]}</p>}
+  if (!sections || sections.length === 0) {
+    return null;
+  }
 
-        <MenuItemsList items={section.items} lang={lang} currency={currency} />
+  const activeSection = sections[selectedIndex];
+
+  return (
+    <div>
+      <div className="w-full max-w-2xl mx-auto flex flex-wrap justify-center items-center gap-4 p-4 bg-gray-800 rounded-xl border border-gray-700 shadow-md mb-8">
+        {sections.map((section, index) => (
+          <button key={section.name[lang]} onClick={() => setSelectedIndex(index)} title={section.name[lang]}
+            className={`p-2 rounded-full transition-all duration-200 ease-in-out
+              ${index === selectedIndex
+                ? 'bg-blue-500 shadow-lg scale-110'
+                : 'bg-gray-700 opacity-70 hover:opacity-100 hover:scale-105'
+              }
+            `}>
+            <img src={section.icon} alt={section.name[lang] + " icon."} className="w-10 h-10 object-contain bg-white rounded-full p-1"/>
+          </button>
+        ))}
+
+        <div className="flex items-center justify-end gap-2">
+          <select
+            className="w-fit text-sm rounded-md border-gray-600 bg-gray-700 text-gray-200 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            id="currency-select" value={currency} onChange={handleCurrencyChange}>
+            {currencies.map((currencyCode) => (
+              <option key={currencyCode} value={currencyCode}>
+                {currencyCode.toUpperCase()}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <section className="w-full max-w-2xl place-items-center mx-auto bg-gray-800 rounded-xl border border-gray-700 shadow-md p-6 sm:p-8 mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <img src={activeSection.icon} alt={activeSection.name[lang] + " icon."} className="w-10 h-10 object-contain bg-white rounded-full p-1 shadow-sm"/>
+          <h2 className="text-2xl font-bold text-white">
+            {activeSection.name[lang]}
+          </h2>
+        </div>
+
+        {activeSection.description && (
+          <p className="text-base text-gray-300 mb-6">
+            {activeSection.description[lang]}
+          </p>
+        )}
+
+        <MenuItemsList items={activeSection.items} lang={lang} currency={currency} />
       </section>
-    );
-  });
-
-  return <div>{menuHeaderSections}</div>;
+    </div>
+  );
 }
 
-function MenuSection({ menus, lang, currency }) {
+function MenuSection({ menus, lang, currency, currencies, handleCurrencyChange }) {
+
   const menusSection = menus.map((menuItem) => {
     return (
       <div key={menuItem.name[lang]}>
-        <h1>{menuItem.name[lang]}</h1>
-        <MenuHeader menuItem={menuItem} lang={lang} currency={currency} />
+        <h1 className="text-3xl font-bold mb-8 text-center text-white">
+          {menuItem.name[lang]}
+        </h1>
+        <MenuHeader menuItem={menuItem} lang={lang} currency={currency} currencies={currencies} handleCurrencyChange={handleCurrencyChange}/>
       </div>
     );
   });
 
-  return <div>{menusSection}</div>;
+  return (
+    <div className="w-full max-w-2xl mx-auto">
+      {menusSection}
+    </div>
+  );
 }
 
 export default MenuSection;
