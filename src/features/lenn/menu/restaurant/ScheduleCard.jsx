@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function ScheduleCard({ schedule, lang }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const getDayName = (dayNumber) => {
     const date = new Date(2025, 10, 2 + dayNumber);
@@ -36,9 +37,7 @@ export function ScheduleCard({ schedule, lang }) {
         const openTime = openHour * 60 + openMinutes;
         const closeTime = closeHour * 60 + closeMinutes;
 
-        if (currentTime >= openTime && currentTime <= closeTime) {
-          return true;
-        }
+        if (currentTime >= openTime && currentTime <= closeTime) return true;
       }
     }
     return false;
@@ -53,37 +52,58 @@ export function ScheduleCard({ schedule, lang }) {
   });
 
   return (
-    <section className="py-4">
-      <div className="text-2xl">
-        <details className="">
-          <summary className="pb-4 marker:text-neutral-50/0 ">
-            <p className="w-full text-center">
-              🕒 Ahora mismo esta {isOpen ? "abierto" : "cerrado"}{" "}
-              <span className="text-sm  hover:cursor-pointer">
-                (ver horarios)
-              </span>
-            </p>
-          </summary>
-          <table className="w-full">
-            <tbody>
-              {schedule.map((dayInterval, index) => (
-                <tr key={index} className="text-center">
-                  <td>
-                    {dayInterval.days.map((day, index) => (
-                      <p key={index} className="">
-                        {getDayName(day)}
-                      </p>
+    <section className="py-2">
+      <div className="text-xl">
+        <div className="grid grid-cols-1 place-items-center">
+          <a className="pb-4">
+            <button
+              onClick={() => setShowModal(true)}
+              className={`w-fit text-center font-semibold text-white rounded-xl px-6 py-3 shadow-md transition-all hover:shadow-lg ${isOpen ? "bg-green-700 hover:bg-green-800" : "bg-red-700 hover:bg-red-800"}`}
+            >
+              🕐 {isOpen ? "Abierto Ahora" : "Cerrado"}
+            </button>
+          </a>
+
+          {showModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity">
+              <div className="bg-white rounded-2xl w-11/12 max-w-md p-6 shadow-2xl">
+                <div className="grid grid-cols-1 place-items-end">
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="text-stone-400 hover:text-stone-600 transition-colors text-3xl"
+                  >
+                    {"x"}
+                  </button>
+                </div>
+
+                <h3 className="text-2xl font-bold text-stone-800 mb-6 text-center">
+                  Horario / Schedule
+                </h3>
+
+                <table className="w-full border-collapse">
+                  <tbody className="text-sm divide-y divide-stone-200">
+                    {schedule.map((dayInterval, index) => (
+                      <tr key={index} className="text-center">
+                        <td className="py-3 px-3 text-stone-700 font-medium">
+                          {dayInterval.days.map((day, i) => (
+                            <p key={i} className="capitalize">
+                              {getDayName(day)}
+                            </p>
+                          ))}
+                        </td>
+                        <td className="py-3 px-3 text-stone-800 font-semibold">
+                          {dayInterval.open}
+                          {" - "}
+                          {getCloseHour(dayInterval.open, dayInterval.time)}
+                        </td>
+                      </tr>
                     ))}
-                  </td>
-                  <td>
-                    {dayInterval.open} a{" "}
-                    {getCloseHour(dayInterval.open, dayInterval.time)}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </details>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
