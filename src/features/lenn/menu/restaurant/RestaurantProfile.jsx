@@ -1,15 +1,16 @@
 import { useState } from "react";
 
 const imgSize = {
-  sm: "w-24 h-24 text-sm",
-  md: "w-32 h-32 text-lg",
-  lg: "w-38 h-38 text-2xl",
-  xl: "w-64 h-64 text-4xl",
+  sm: "w-20 h-20 text-lg",
+  md: "w-28 h-28 text-2xl",
+  lg: "w-36 h-36 text-3xl",
+  xl: "w-48 h-48 text-5xl",
 };
+
 const imgStyle = {
   circular: "rounded-full",
-  square: "rounded-md",
-  default: "rounded-xl",
+  square: "rounded-xl",
+  default: "rounded-2xl",
 };
 
 export function RestaurantProfile({
@@ -20,7 +21,7 @@ export function RestaurantProfile({
   ...props
 }) {
   const [imageError, setImageError] = useState(false);
-  const imgClasses = `${imgSize[size] ?? imgSize.md} ${imgStyle[logo.container] ?? imgStyle.default}`;
+  const imgClasses = `${imgSize[size] ?? imgSize.md} ${imgStyle[logo.container] ?? imgStyle.default} shadow-lg border-4 border-white`;
   const shouldShowImage = logo.url && !imageError;
 
   return (
@@ -36,14 +37,16 @@ export function RestaurantProfile({
         />
       ) : (
         <span
-          className={`grid place-items-center text-7xl bg-amber-500 text-white ${imgClasses}`}
+          className={`grid place-items-center text-6xl bg-neutral-800 text-white ${imgClasses}`}
         >
           {name.substring(0, 2)}
         </span>
       )}
 
-      <h1 className="text-4xl pt-1">{name}</h1>
-      <h2 className="text-lg italic pt-4">{slogan}</h2>
+      <h1 className="text-5xl font-bold text-stone-800 pt-4">
+        {name}
+      </h1>
+      <h2 className="text-stone-500 italic pt-2 text-lg">{slogan}</h2>
     </div>
   );
 }
