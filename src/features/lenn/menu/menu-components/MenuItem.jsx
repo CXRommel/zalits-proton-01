@@ -19,7 +19,7 @@ export function MenuItem({ menu, lang, currency }) {
       >
         {name[lang]}
       </h1>
-      <div className="bg-stone-50 rounded-2xl py-16 md:p-16 border border-stone-200">
+      <div className="bg-stone-50 rounded-2xl py-16 @md:p-16 border border-stone-200">
         <MenuSection section={currentSection} lang={lang} currency={currency} />
         <div className="grid grid-cols-2 gap-4 p-5 mt-6">
           {sections.map((section, index) => {

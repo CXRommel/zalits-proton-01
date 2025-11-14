@@ -43,7 +43,7 @@ export default function MenuView() {
     "px-6 py-4 bg-white hover:bg-stone-50 text-stone-700 break-all rounded-xl border border-stone-200 hover:border-stone-300 transition-all duration-200 shadow-sm hover:shadow-md";
 
   return (
-    <div className="w-full m-auto sm:w-10/12 bg-stone-100 min-h-screen select-none">
+    <div className="@container w-full m-auto sm:w-8/12 bg-stone-100 min-h-screen select-none">
       <div className="bg-white border-b border-stone-200 py-4 px-4">
         <IntlManager
           supportCurrencies={supportCurrencies}
@@ -66,7 +66,7 @@ export default function MenuView() {
         <ScheduleCard schedule={client.schedule} lang={lang} />
       </div>
 
-      <div className="m-4 grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-4">
+      <div className="m-4 grid grid-rows-2 @lg:grid-cols-2 @lg:grid-rows-1 gap-4">
         <RestaurantAddressCard className={cardStyle} address={client.address} />
         <RestaurantContactCard className={cardStyle} contact={client.contact} />
       </div>
