@@ -38,9 +38,9 @@ export function MenuItem({ menu, lang, currency }) {
                   <img
                     src={section.icon}
                     alt={section.name[lang]}
-                    className="w-12 h-12 object-contain"
+                    className={`w-12 h-12 object-contain ${isActive && "invert"}`}
                   />
-                  <p className="text-sm font-semibold">{section.name[lang]}</p>
+                  <p className="text-sm font-semibold break-all">{section.name[lang]}</p>
                 </button>
               </div>
             );
