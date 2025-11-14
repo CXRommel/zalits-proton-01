@@ -37,8 +37,10 @@
 // ============================================================================
 
 // Example components (provided as reference)
+import { TopMenuHighDefinition } from "#src/features/ali";
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
+import { Component } from "react";
 
 // TODO: Import your component here
 // Example:
@@ -78,6 +80,14 @@ const componentRegistry = [
   //   description: 'This component does something amazing!',
   //   Component: MyComponent,
   // },
+
+  {
+    id: "ali-menu-pro-component",
+    name: "Restaurant Menu Component",
+    author: "Ali",
+    description: "This is my restaurant component version",
+    Component: TopMenuHighDefinition,
+  },
 ];
 
 // ============================================================================
