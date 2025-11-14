@@ -43,7 +43,7 @@ export default function MenuView() {
     "px-6 py-4 bg-white hover:bg-stone-50 text-stone-700 break-all rounded-xl border border-stone-200 hover:border-stone-300 transition-all duration-200 shadow-sm hover:shadow-md";
 
   return (
-    <div className="w-full m-auto sm:w-8/12 md:m-auto bg-stone-100 min-h-screen select-none">
+    <div className="w-full m-auto sm:w-10/12 bg-stone-100 min-h-screen select-none">
       <div className="bg-white border-b border-stone-200 py-4 px-4">
         <IntlManager
           supportCurrencies={supportCurrencies}
