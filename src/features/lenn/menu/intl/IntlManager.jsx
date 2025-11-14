@@ -1,4 +1,5 @@
-const selectStyle = "w-fit text-sm text-stone-600 bg-white px-3 py-2 rounded-lg border border-stone-300 hover:border-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-500 transition-all cursor-pointer font-medium shadow-sm";
+const selectStyle =
+  "w-fit text-sm text-stone-600 bg-white px-3 py-2 rounded-lg border border-stone-300 hover:border-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-500 transition-all cursor-pointer font-medium shadow-sm";
 
 export function IntlManager({
   supportCurrencies,

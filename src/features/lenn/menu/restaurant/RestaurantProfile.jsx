@@ -43,9 +43,7 @@ export function RestaurantProfile({
         </span>
       )}
 
-      <h1 className="text-5xl font-bold text-stone-800 pt-4">
-        {name}
-      </h1>
+      <h1 className="text-5xl font-bold text-stone-800 pt-4">{name}</h1>
       <h2 className="text-stone-500 italic pt-2 text-lg">{slogan}</h2>
     </div>
   );

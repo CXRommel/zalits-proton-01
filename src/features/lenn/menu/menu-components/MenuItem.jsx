@@ -40,7 +40,9 @@ export function MenuItem({ menu, lang, currency }) {
                     alt={section.name[lang]}
                     className={`w-12 h-12 object-contain ${isActive && "invert"}`}
                   />
-                  <p className="text-sm font-semibold break-all">{section.name[lang]}</p>
+                  <p className="text-sm font-semibold break-all">
+                    {section.name[lang]}
+                  </p>
                 </button>
               </div>
             );
