@@ -34,6 +34,7 @@ function FightSection() {
                 selectedComponent={leftComponent}
                 onSelect={setLeftComponent}
                 side="left"
+                otherSelectedComponentId={rightComponent?.id}
               />
             </div>
 
@@ -75,6 +76,7 @@ function FightSection() {
                 selectedComponent={rightComponent}
                 onSelect={setRightComponent}
                 side="right"
+                otherSelectedComponentId={leftComponent?.id}
               />
             </div>
 
