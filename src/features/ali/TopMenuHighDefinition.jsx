@@ -10,14 +10,79 @@ function TopMenuHighDefinition() {
 	const menuComponents = menus.map((it, index) => {
 		return <MenuComponent menu={it} key={index} setIsSpanish={setIsSpanish} isSpanish={isSpanish} />
 	})
-
 	const { logo, slogan } = profile;
 
+	// Schedule
+	const { days, open, time } = {
+		"days": [1, 2, 3, 4, 5],
+		"open": "23:00",
+		"time": "11"
+	}
+
+	const OpenTimeComponents = schedule.map((it, index) => {
+		return <OpenTime key={index} days={it.days} open={it.open} time={it.time} isSpanish={isSpanish} />
+	});
+
 	return (
-		<div className='size-full flex flex-col justify-center bg-orange-100 p-8 gap-4'>
+		<div className='w-full flex flex-col justify-center bg-orange-100 p-8 gap-4'>
 			<HeaderPage name={name} slogan={slogan} logo={logo} isSpanish={isSpanish} address={address} contact={contact} />
-			<div className='flex gap-4'>
+			{/* Schedule */}
+			<div className='flex justify-center overflow-x-scroll lg:overflow-x-visible'>
+				{OpenTimeComponents}
+			</div>
+			<div className='flex gap-4  '>
 				{menuComponents}
+			</div>
+		</div>
+	)
+}
+
+function OpenTime({ days, open, time, isSpanish }) {
+	function getFinalTime() {
+		const date = new Date(parseInt(open));
+		const time2 = new Date(parseInt(time))
+		const newTime = new Date();
+		const sumaHoras = date.getHours() + time2.getHours();
+		newTime.setHours(sumaHoras);
+		const hours = newTime.getHours();
+		const minuts = newTime.getMinutes();
+		return `${hours}:${minuts}`;
+	}
+
+	const daysOfWeek = days.map((it, index) => {
+		const endTime = getFinalTime()
+		return (
+			<div className='shadow-lg rounded-xl m-1 p-2 items-center bg-white justify-between'>
+				<DaysOfWeekList key={index} dayIndex={it} isSpanish={isSpanish} openTime={open} closeTime={endTime} />
+			</div>
+		)
+	})
+
+	return (
+		<div className='flex'>
+			{daysOfWeek}
+		</div>
+	)
+}
+
+function DaysOfWeekList({ dayIndex, isSpanish, openTime, closeTime }) {
+	const listOfDaysOfWeek = [
+		{ es: "Domingo", en: "Sunday" },
+		{ es: "Lunes", en: "Monday" },
+		{ es: "Martes", en: "Tuesday" },
+		{ es: "Miercoles", en: "Wensday" },
+		{ es: "Juevas", en: "Thursday" },
+		{ es: "Viernes", en: "Friday" },
+		{ es: "Sabado", en: "Saturday" },
+	]
+
+	return (
+		<div className='flex my-4 items-center'>
+			<div className='me-2'>
+				{isSpanish ? listOfDaysOfWeek[dayIndex].es : listOfDaysOfWeek[dayIndex].en}
+			</div>
+			<div>
+				{openTime} - {closeTime}
 			</div>
 		</div>
 	)
@@ -26,16 +91,16 @@ function TopMenuHighDefinition() {
 
 function HeaderPage({ name, slogan, logo, isSpanish, address, contact }) {
 	return (
-		<div className='flex shadow-lg rounded-xl p-4 items-center bg-white justify-between'>
+		<div className='grid grid-cols-1 lg:grid-cols-2 shadow-lg rounded-xl p-4 items-center bg-white justify-between'>
 			<div className='flex items-center'>
-				<img src={logo.url} className='w-32 h-32 me-4' />
+				<img src={logo.url} className='w-16 h-16 lg:w-32 lg:h-32 me-4' />
 				<div>
 					<div className='text-3xl'>{name}</div>
 					<p className='text-xl'>{isSpanish ? slogan.es : slogan.en}</p>
 					<p className='text-xs text-gray-500'>{address.street}. {address.zip}. {address.city}. {address.state}. {address.country}</p>
 				</div>
 			</div>
-			<div>
+			<div className='flex lg:flex-row-reverse mt-2 lg:mt-0'>
 				<ContactPart contact={contact} />
 			</div>
 		</div>
@@ -65,7 +130,7 @@ function ContactPart({ contact }) {
 
 function ContactItem({ icon, text }) {
 	return (
-		<div className='m-2'>
+		<div className=''>
 			<div className='flex text-xs items-center'>
 				<div className='me-2'>
 					{icon}
@@ -124,7 +189,7 @@ function SectionComponent({ section, isSpanish }) {
 function Item({ name = "", description = "", price = "", isSpanish = false, icon }) {
 	return (
 		<div className='flex shadow-lg rounded-xl p-2 items-center hover:scale-110 duration-300 bg-white hover:bg-orange-50'>
-			<img src={icon} className='p-4 w-32 h-32' />
+			<img src={icon} className='p-4 w-24 h-24 lg:w-32 lg:h-32' />
 			<div>
 				<div className='text-xl'>{isSpanish ? name.es : name.en}</div>
 				{description && <p className='text-sm'>{isSpanish ? description.es : description.en}</p>}

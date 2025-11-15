@@ -23,6 +23,7 @@ function FightSection() {
 
         {/* Fight Arena */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
           {/* Left Side */}
           <div className="space-y-4">
             <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-6 border-2 border-blue-500/50">
@@ -49,7 +50,7 @@ function FightSection() {
                       by {leftComponent.author}
                     </span>
                   </div>
-                  <div className="component-wrapper">
+                  <div className="component-wrapper grid grid-cols-1">
                     <leftComponent.Component />
                   </div>
                 </div>
@@ -137,7 +138,7 @@ function FightSection() {
           </ol>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 
