@@ -40,6 +40,7 @@
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
 import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
+import { MenuRestaurant } from "#src/features/menu-billy-blanco-orlando";
 
 // TODO: Import your component here
 // Example:
@@ -77,6 +78,15 @@ const componentRegistry = [
     description:
       "Menú de restaurante que muestra los platillos disponibles con sus precios e imágenes.",
     Component: MenuBillyBlanco,
+  },
+
+  {
+    id: "menu-billy-blanco-orlando",
+    name: "Menu Billy Blanco",
+    author: "Orlando Galvan Vargas",
+    description:
+      "Diseño de menú de restaurante para visualización de platillos con sus precios",
+    Component: MenuRestaurant,
   },
 
   // TODO: Add your component registration here
