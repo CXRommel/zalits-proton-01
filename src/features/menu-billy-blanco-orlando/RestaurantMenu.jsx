@@ -1,7 +1,6 @@
 import { useState } from "react";
-import DataMenu from "../../data/client.json";
+import DataMenu from "#src/data/client.json";
 import MenuHeader from "./components/MenuHeader";
-import { text } from "./helpers/text";
 import MenuSection from "./components/MenuSection";
 import MenuSurvey from "./components/MenuSurvey";
 
@@ -33,7 +32,7 @@ function RestaurantMenu() {
   }
 
   return (
-    <div>
+    <div className="w-full max-w-5xl mx-auto p-4 space-y-6">
       <MenuHeader
         dataMenu={DataMenu}
         language={language}
