@@ -29,11 +29,6 @@ function InfoRestaurantComponent({ menuData, lang }) {
       .join(" - ");
   };
 
-  const isSurveyEnabled =
-    menuData.survey?.enabled &&
-    menuData.survey?.questions &&
-    menuData.survey.questions.length > 0;
-
   return (
     <div className="w-full bg-orange-900 p-4 rounded-xl flex flex-col gap-4 max-w-[450px]">
       <div className="bg-white rounded-xl p-4 flex items-start gap-3 shadow-md">
