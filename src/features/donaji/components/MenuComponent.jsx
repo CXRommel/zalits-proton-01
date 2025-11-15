@@ -8,7 +8,7 @@ function MenuComponent({ language, currency }) {
     <>
       <div className="grid h-screen">
         <h1
-          className="text-center mt-4 text-orange-900 font-extrabold"
+          className="text-center text-orange-900 font-extrabold"
           style={{
             fontFamily: theme.typography?.fontFamily?.sectionTitle,
             fontSize: "3rem",
