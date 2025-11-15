@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MenuComponent from "./components/MenuComponent";
 import HeadComponent from "./components/HeadComponent";
+import InfoComponent from "./components/InfoComponent";
 import menuData from "#src/data/client.json";
 
 function MenuDonajiComponent() {
@@ -17,6 +18,7 @@ function MenuDonajiComponent() {
         setLang={setLang}
         setCurr={setCurr}
       />
+      <InfoComponent menuData={menuData} language={lang} />
       <MenuComponent menuData={menuData} language={lang} currency={curr} />
     </div>
   );
