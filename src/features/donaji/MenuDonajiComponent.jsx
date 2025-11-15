@@ -9,7 +9,7 @@ function MenuDonajiComponent() {
   const [lang, setLang] = useState(defaultLang);
   const [curr, setCurr] = useState(defaultCurr);
   return (
-    <div>
+    <div className="w-full mx-auto px-4">
       <HeadComponent
         menuData={menuData}
         lang={lang}

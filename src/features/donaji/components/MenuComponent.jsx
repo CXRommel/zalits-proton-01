@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-import menuData from "#src/data/client.json";
-
-function MenuComponent({ language, currency }) {
+function MenuComponent({ menuData, language, currency }) {
   const theme = menuData.theme || {};
   const sections = menuData.menus?.[0]?.sections || {};
   return (
     <>
-      <div className="grid h-screen">
+      <div className="min-h-screen w-full">
         <h1
           className="text-center text-orange-900 font-extrabold"
           style={{
