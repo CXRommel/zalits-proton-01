@@ -7,6 +7,7 @@ import { RestaurantContactCard } from "../restaurant/RestaurantContactCard";
 import { RestaurantProfile } from "../restaurant/RestaurantProfile";
 import { IntlManager } from "../intl/IntlManager";
 import { MenuItem } from "./MenuItem";
+import { SurveyComponent } from "../survey/SurveyComponent";
 
 export default function MenuView() {
   const supportLangs = client.intl.languages;
@@ -74,6 +75,10 @@ export default function MenuView() {
       <div className="m-4 mb-8">
         <MenuItem menu={client.menus[0]} lang={lang} currency={currency} />
       </div>
+
+      <footer>
+        <SurveyComponent survey={client.survey} lang={lang} />
+      </footer>
     </div>
   );
 }
