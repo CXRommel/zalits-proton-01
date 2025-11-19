@@ -40,6 +40,7 @@
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
 import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
+import {MenuComponent} from '#src/features/lenn/menu';
 
 // TODO: Import your component here
 // Example:
@@ -68,6 +69,13 @@ const componentRegistry = [
     description:
       "A countdown timer with start, pause, reset, and preset functionality. Shows progress bar.",
     Component: TimerComponent,
+  },
+  {
+    id: "menu-component",
+    name: "Menu Component",
+    author: "Lenn",
+    description: "git gud 🤺",
+    Component: MenuComponent,
   },
 
   {
