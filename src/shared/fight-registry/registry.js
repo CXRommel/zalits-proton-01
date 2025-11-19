@@ -83,6 +83,14 @@ const componentRegistry = [
   },
 
   {
+    id: "menu-component",
+    name: "Menu Component",
+    author: "Lenn",
+    description: "git gud 🤺",
+    Component: MenuComponent,
+  },
+
+  {
     id: "menu-donaji",
     name: "Menu Donaji",
     author: "Alison Euridice Montufar Pina",
