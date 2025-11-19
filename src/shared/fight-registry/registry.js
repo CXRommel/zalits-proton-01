@@ -40,7 +40,8 @@
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
 import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
-import {MenuComponent} from '#src/features/lenn/menu';
+import { MenuDonajiComponent } from "#src/features/donaji/";
+import { MenuComponent } from "#src/features/lenn/menu";
 
 // TODO: Import your component here
 // Example:
@@ -70,21 +71,22 @@ const componentRegistry = [
       "A countdown timer with start, pause, reset, and preset functionality. Shows progress bar.",
     Component: TimerComponent,
   },
-  {
-    id: "menu-component",
-    name: "Menu Component",
-    author: "Lenn",
-    description: "git gud 🤺",
-    Component: MenuComponent,
-  },
 
   {
     id: "menu-billy-blanco",
     name: "Menu Billy Blanco",
-    author: "Alison Euridice Montufar Pina",
+    author: "System",
     description:
       "Menú de restaurante que muestra los platillos disponibles con sus precios e imágenes.",
     Component: MenuBillyBlanco,
+  },
+
+  {
+    id: "menu-donaji",
+    name: "Menu Donaji",
+    author: "Alison Euridice Montufar Pina",
+    description: "Intento de menu de Donaji sin ocupar IA:)",
+    Component: MenuDonajiComponent,
   },
 
   // TODO: Add your component registration here
