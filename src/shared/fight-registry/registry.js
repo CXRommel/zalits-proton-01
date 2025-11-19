@@ -42,6 +42,7 @@ import { TimerComponent } from "#src/features/example-timer";
 import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
 import { MenuDonajiComponent } from "#src/features/donaji/";
 import { MenuComponent } from "#src/features/lenn/menu";
+import { MenuRestaurant } from "#src/features/menu-billy-blanco-orlando";
 
 // TODO: Import your component here
 // Example:
@@ -87,6 +88,15 @@ const componentRegistry = [
     author: "Alison Euridice Montufar Pina",
     description: "Intento de menu de Donaji sin ocupar IA:)",
     Component: MenuDonajiComponent,
+  },
+
+  {
+    id: "menu-billy-blanco-orlando",
+    name: "Menu Billy Blanco",
+    author: "Orlando Galvan Vargas",
+    description:
+      "Diseño de menú de restaurante para visualización de platillos con sus precios",
+    Component: MenuRestaurant,
   },
 
   // TODO: Add your component registration here
