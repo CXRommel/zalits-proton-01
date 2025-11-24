@@ -8,6 +8,11 @@ function FightSection() {
 
   const availableComponents = getAvailableComponents();
 
+  const openInNewWindow = (componentId) => {
+    const url = `${window.location.origin}/?standalone=true&id=${componentId}`;
+    window.open(url, "_blank", "width=1200,height=800");
+  };
+
   return (
     <section id="fight-section" className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -43,12 +48,22 @@ function FightSection() {
               {leftComponent ? (
                 <div className="h-full">
                   <div className="flex items-center justify-between mb-4 pb-2 border-b border-blue-500/30">
-                    <span className="text-blue-300 font-semibold">
-                      {leftComponent.name}
-                    </span>
-                    <span className="text-xs text-blue-400 bg-blue-500/20 px-2 py-1 rounded">
-                      by {leftComponent.author}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-blue-300 font-semibold">
+                        {leftComponent.name}
+                      </span>
+                      <span className="text-xs text-blue-400 bg-blue-500/20 px-2 py-1 rounded">
+                        by {leftComponent.author}
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => openInNewWindow(leftComponent.id)}
+                      className="bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 px-3 py-1.5 rounded text-sm transition-colors flex items-center gap-1.5"
+                      title="Open in new window"
+                    >
+                      <span className="text-base">🪟</span>
+                      <span className="hidden sm:inline">Open</span>
+                    </button>
                   </div>
                   <div className="component-wrapper">
                     <leftComponent.Component />
@@ -92,12 +107,22 @@ function FightSection() {
               {rightComponent ? (
                 <div className="h-full">
                   <div className="flex items-center justify-between mb-4 pb-2 border-b border-red-500/30">
-                    <span className="text-red-300 font-semibold">
-                      {rightComponent.name}
-                    </span>
-                    <span className="text-xs text-red-400 bg-red-500/20 px-2 py-1 rounded">
-                      by {rightComponent.author}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-red-300 font-semibold">
+                        {rightComponent.name}
+                      </span>
+                      <span className="text-xs text-red-400 bg-red-500/20 px-2 py-1 rounded">
+                        by {rightComponent.author}
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => openInNewWindow(rightComponent.id)}
+                      className="bg-red-500/20 hover:bg-red-500/30 text-red-300 px-3 py-1.5 rounded text-sm transition-colors flex items-center gap-1.5"
+                      title="Open in new window"
+                    >
+                      <span className="text-base">🪟</span>
+                      <span className="hidden sm:inline">Open</span>
+                    </button>
                   </div>
                   <div className="component-wrapper">
                     <rightComponent.Component />
