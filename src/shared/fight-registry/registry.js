@@ -43,6 +43,7 @@ import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
 import { MenuDonajiComponent } from "#src/features/donaji/";
 import { MenuComponent } from "#src/features/lenn/menu";
 import { MenuRestaurant } from "#src/features/menu-billy-blanco-orlando";
+import { BrandonMenuComponent } from "#src/features/brandon-menu";
 
 // TODO: Import your component here
 // Example:
@@ -116,6 +117,13 @@ const componentRegistry = [
   //   description: 'This component does something amazing!',
   //   Component: MyComponent,
   // },
+  {
+    id: 'brandon-menu',
+    name: 'Brandon Menu Component',
+    author: 'BrandonFnts',
+    description: 'A simple menu component to show the menu of a restaurant.',
+    Component: BrandonMenuComponent,
+  }
 ];
 
 // ============================================================================
