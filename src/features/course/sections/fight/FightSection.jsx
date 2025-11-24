@@ -22,7 +22,7 @@ function FightSection() {
         </div>
 
         {/* Fight Arena */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-18">
           {/* Left Side */}
           <div className="space-y-4">
             <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-6 border-2 border-blue-500/50">
@@ -34,11 +34,12 @@ function FightSection() {
                 selectedComponent={leftComponent}
                 onSelect={setLeftComponent}
                 side="left"
+                otherSelectedComponentId={rightComponent?.id}
               />
             </div>
 
             {/* Left Component Display */}
-            <div className="bg-slate-800/50 rounded-lg p-6 border-2 border-blue-500/30 min-h-[400px]">
+            <div className="overflow-auto bg-slate-800/50 rounded-lg p-6 border-2 border-blue-500/30 h-[600px]">
               {leftComponent ? (
                 <div className="h-full">
                   <div className="flex items-center justify-between mb-4 pb-2 border-b border-blue-500/30">
@@ -64,6 +65,13 @@ function FightSection() {
             </div>
           </div>
 
+          {/* VS Badge (centered between panels) */}
+          <div className="lg:absolute sm:row-span-1 justify-self-center place-items-center place-self-center">
+            <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white font-bold text-4xl px-8 py-4 rounded-full shadow-2xl border-4 border-white/20 animate-pulse">
+              VS
+            </div>
+          </div>
+
           {/* Right Side */}
           <div className="space-y-4">
             <div className="bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-lg p-6 border-2 border-red-500/50">
@@ -75,11 +83,12 @@ function FightSection() {
                 selectedComponent={rightComponent}
                 onSelect={setRightComponent}
                 side="right"
+                otherSelectedComponentId={leftComponent?.id}
               />
             </div>
 
             {/* Right Component Display */}
-            <div className="bg-slate-800/50 rounded-lg p-6 border-2 border-red-500/30 min-h-[400px]">
+            <div className="overflow-auto bg-slate-800/50 rounded-lg p-6 border-2 border-red-500/30 h-[600px]">
               {rightComponent ? (
                 <div className="h-full">
                   <div className="flex items-center justify-between mb-4 pb-2 border-b border-red-500/30">
@@ -103,13 +112,6 @@ function FightSection() {
                 </div>
               )}
             </div>
-          </div>
-        </div>
-
-        {/* VS Badge (centered between panels) */}
-        <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-          <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white font-bold text-4xl px-8 py-4 rounded-full shadow-2xl border-4 border-white/20 animate-pulse">
-            VS
           </div>
         </div>
 

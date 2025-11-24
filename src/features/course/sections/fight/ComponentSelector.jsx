@@ -3,6 +3,7 @@ function ComponentSelector({
   selectedComponent,
   onSelect,
   side,
+  otherSelectedComponentId,
 }) {
   const sideColors = {
     left: {
@@ -54,6 +55,7 @@ function ComponentSelector({
             key={component.id}
             value={component.id}
             className="bg-slate-800 text-white"
+            disabled={component.id === otherSelectedComponentId}
           >
             {component.name} - by {component.author}
           </option>
