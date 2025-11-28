@@ -65,7 +65,7 @@ function FightSection() {
                       <span className="hidden sm:inline">Open</span>
                     </button>
                   </div>
-                  <div className="component-wrapper">
+                  <div className="component-wrapper grid grid-cols-1">
                     <leftComponent.Component />
                   </div>
                 </div>
@@ -164,7 +164,7 @@ function FightSection() {
           </ol>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 

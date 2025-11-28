@@ -37,6 +37,7 @@
 // ============================================================================
 
 // Example components (provided as reference)
+import { TopMenuHighDefinition } from "#src/features/ali";
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
 import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
@@ -118,12 +119,19 @@ const componentRegistry = [
   //   Component: MyComponent,
   // },
   {
-    id: 'brandon-menu',
-    name: 'Brandon Menu Component',
-    author: 'BrandonFnts',
-    description: 'A simple menu component to show the menu of a restaurant.',
+    id: "brandon-menu",
+    name: "Brandon Menu Component",
+    author: "BrandonFnts",
+    description: "A simple menu component to show the menu of a restaurant.",
     Component: BrandonMenuComponent,
-  }
+  },
+  {
+    id: "ali-menu-pro-component",
+    name: "Restaurant Menu Component",
+    author: "Ali",
+    description: "This is my restaurant component version",
+    Component: TopMenuHighDefinition,
+  },
 ];
 
 // ============================================================================
