@@ -40,7 +40,11 @@
 import { TopMenuHighDefinition } from "#src/features/ali";
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
-import { Component } from "react";
+import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
+import { MenuDonajiComponent } from "#src/features/donaji/";
+import { MenuComponent } from "#src/features/lenn/menu";
+import { MenuRestaurant } from "#src/features/menu-billy-blanco-orlando";
+import { BrandonMenuComponent } from "#src/features/brandon-menu";
 
 // TODO: Import your component here
 // Example:
@@ -71,6 +75,40 @@ const componentRegistry = [
     Component: TimerComponent,
   },
 
+  {
+    id: "menu-billy-blanco",
+    name: "Menu Billy Blanco",
+    author: "System",
+    description:
+      "Menú de restaurante que muestra los platillos disponibles con sus precios e imágenes.",
+    Component: MenuBillyBlanco,
+  },
+
+  {
+    id: "menu-component",
+    name: "Menu Component",
+    author: "Lenn",
+    description: "git gud 🤺",
+    Component: MenuComponent,
+  },
+
+  {
+    id: "menu-donaji",
+    name: "Menu Donaji",
+    author: "Alison Euridice Montufar Pina",
+    description: "Intento de menu de Donaji sin ocupar IA:)",
+    Component: MenuDonajiComponent,
+  },
+
+  {
+    id: "menu-billy-blanco-orlando",
+    name: "Menu Billy Blanco",
+    author: "Orlando Galvan Vargas",
+    description:
+      "Diseño de menú de restaurante para visualización de platillos con sus precios",
+    Component: MenuRestaurant,
+  },
+
   // TODO: Add your component registration here
   // Example:
   // {
@@ -80,7 +118,13 @@ const componentRegistry = [
   //   description: 'This component does something amazing!',
   //   Component: MyComponent,
   // },
-
+  {
+    id: "brandon-menu",
+    name: "Brandon Menu Component",
+    author: "BrandonFnts",
+    description: "A simple menu component to show the menu of a restaurant.",
+    Component: BrandonMenuComponent,
+  },
   {
     id: "ali-menu-pro-component",
     name: "Restaurant Menu Component",
