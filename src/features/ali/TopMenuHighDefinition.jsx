@@ -39,21 +39,18 @@ function TopMenuHighDefinition() {
 
 function OpenTime({ days, open, time, isSpanish }) {
 	function getFinalTime() {
-		const date = new Date(parseInt(open));
-		const time2 = new Date(parseInt(time))
-		const newTime = new Date();
-		const sumaHoras = date.getHours() + time2.getHours();
-		newTime.setHours(sumaHoras);
-		const hours = newTime.getHours();
-		const minuts = newTime.getMinutes();
-		return `${hours}:${minuts}`;
+		const closeHour = new Date(0, 0, 0, parseInt(open), 0, 0, 0);
+		closeHour.setHours(closeHour.getHours() + parseInt(time));
+		const hours = closeHour.getHours();
+		const minuts = closeHour.getMinutes();
+		return closeHour.toLocaleTimeString(navigator.language, { hourCycle: "h24", hour: "2-digit", minute: "2-digit" })
 	}
 
 	const daysOfWeek = days.map((it, index) => {
 		const endTime = getFinalTime()
 		return (
-			<div className='shadow-lg rounded-xl m-1 p-2 items-center bg-white justify-between'>
-				<DaysOfWeekList key={index} dayIndex={it} isSpanish={isSpanish} openTime={open} closeTime={endTime} />
+			<div className='shadow-lg rounded-xl m-1 p-2 items-center bg-white justify-between' key={index}>
+				<DaysOfWeekList dayIndex={it} isSpanish={isSpanish} openTime={open} closeTime={endTime} />
 			</div>
 		)
 	})
