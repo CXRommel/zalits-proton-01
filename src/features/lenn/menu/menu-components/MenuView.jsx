@@ -2,7 +2,6 @@ import client from "#src/data/client.json";
 import { useEffect } from "react";
 import { useState } from "react";
 import { RestaurantAddressCard } from "../restaurant/RestaurantAddressCard";
-import { ScheduleCard } from "../restaurant/ScheduleCard";
 import { RestaurantContactCard } from "../restaurant/RestaurantContactCard";
 import { RestaurantProfile } from "../restaurant/RestaurantProfile";
 import { IntlManager } from "../intl/IntlManager";
@@ -41,11 +40,11 @@ export default function MenuView() {
   }, []);
 
   const cardStyle =
-    "px-6 py-4 bg-white hover:bg-stone-50 text-stone-700 break-all rounded-xl border border-stone-200 hover:border-stone-300 transition-all duration-200 shadow-sm hover:shadow-md";
+    "grid place-items-center px-6 py-6 bg-white/80 backdrop-blur-md text-stone-700 break-all rounded-3xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 group";
 
   return (
-    <div className="@container w-full m-auto sm:w-8/12 bg-stone-100 min-h-screen select-none">
-      <div className="bg-white border-b border-stone-200 py-4 px-4">
+    <div className="@container m-auto bg-stone-100 select-none">
+      <div className="bg-white/80 border-b border-white/20 shadow-sm p-4 ">
         <IntlManager
           supportCurrencies={supportCurrencies}
           supportLangs={supportLangs}
@@ -54,31 +53,37 @@ export default function MenuView() {
         />
       </div>
 
-      <div className="py-8 bg-gradient-to-b from-white to-stone-50">
-        <RestaurantProfile
-          slogan={client.profile.slogan[lang]}
-          logo={client.profile.logo}
-          name={client.name}
-          size="lg"
-        />
-      </div>
+      <div className="pb-8">
+        <div className="py-10">
+          <RestaurantProfile
+            slogan={client.profile.slogan[lang]}
+            logo={client.profile.logo}
+            name={client.name}
+            size="lg"
+          />
+        </div>
 
-      <div className="px-4 pb-4">
-        <ScheduleCard schedule={client.schedule} lang={lang} />
-      </div>
+        <div className="pt-8 px-4 grid grid-cols-1 @lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <RestaurantAddressCard
+            className={cardStyle}
+            address={client.address}
+            schedule={client.schedule}
+            lang={lang}
+          />
+          <RestaurantContactCard
+            className={cardStyle}
+            contact={client.contact}
+          />
+        </div>
 
-      <div className="m-4 grid grid-rows-2 @lg:grid-cols-2 @lg:grid-rows-1 gap-4">
-        <RestaurantAddressCard className={cardStyle} address={client.address} />
-        <RestaurantContactCard className={cardStyle} contact={client.contact} />
-      </div>
+        <div className="px-4 max-w-5xl mx-auto">
+          <MenuItem menu={client.menus[0]} lang={lang} currency={currency} />
+        </div>
 
-      <div className="m-4 mb-8">
-        <MenuItem menu={client.menus[0]} lang={lang} currency={currency} />
+        <footer className="grid place-items-center pt-20">
+          <SurveyComponent survey={client.survey} lang={lang} />
+        </footer>
       </div>
-
-      <footer>
-        <SurveyComponent survey={client.survey} lang={lang} />
-      </footer>
     </div>
   );
 }
