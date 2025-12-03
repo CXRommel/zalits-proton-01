@@ -43,8 +43,8 @@ export default function MenuView() {
     "grid place-items-center px-6 py-6 bg-white/80 backdrop-blur-md text-stone-700 break-all rounded-3xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 group";
 
   return (
-    <div className="@container m-auto bg-stone-100 select-none">
-      <div className="bg-white/80 border-b border-white/20 shadow-sm p-4 ">
+    <div className="@container m-auto bg-stone-100 select-none rounded-2xl my-5">
+      <div className="bg-white/80 border-b border-white/20 shadow-sm p-4 rounded-t-2xl">
         <IntlManager
           supportCurrencies={supportCurrencies}
           supportLangs={supportLangs}
@@ -54,16 +54,15 @@ export default function MenuView() {
       </div>
 
       <div className="pb-8">
-        <div className="py-10">
+
           <RestaurantProfile
             slogan={client.profile.slogan[lang]}
             logo={client.profile.logo}
             name={client.name}
             size="lg"
           />
-        </div>
 
-        <div className="pt-8 px-4 grid grid-cols-1 @lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="pt-8 px-4 grid grid-cols-1 @xl:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <RestaurantAddressCard
             className={cardStyle}
             address={client.address}
@@ -77,7 +76,11 @@ export default function MenuView() {
         </div>
 
         <div className="px-4 max-w-5xl mx-auto">
-          <MenuItem menu={client.menus[0]} lang={lang} currency={currency} />
+          {client.menus.map((menu, index) => (
+            <div key={index}>
+              <MenuItem menu={menu} lang={lang} currency={currency} />
+            </div>
+          ))}
         </div>
 
         <footer className="grid place-items-center pt-20">
