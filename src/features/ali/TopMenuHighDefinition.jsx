@@ -36,10 +36,10 @@ function Schedule({ schedule, isSpanish }) {
 			{ es: "Domingo", en: "Sunday" },
 			{ es: "Lunes", en: "Monday" },
 			{ es: "Martes", en: "Tuesday" },
-			{ es: "Miercoles", en: "Wensday" },
-			{ es: "Juevas", en: "Thursday" },
+			{ es: "Miércoles", en: "Wednesday" },
+			{ es: "Jueves", en: "Thursday" },
 			{ es: "Viernes", en: "Friday" },
-			{ es: "Sabado", en: "Saturday" },
+			{ es: "Sábado", en: "Saturday" }
 		]
 		const list = [];
 		schedule.map(block => {
