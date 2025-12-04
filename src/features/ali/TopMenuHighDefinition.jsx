@@ -2,93 +2,92 @@ import menuData from '#src/data/client.json'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-
-
 function TopMenuHighDefinition() {
 	const { address, contact, menus, schedule, profile, name } = menuData;
 	const [isSpanish, setIsSpanish] = useState(false);
-	const menuComponents = menus.map((it, index) => {
-		return <MenuComponent menu={it} key={index} setIsSpanish={setIsSpanish} isSpanish={isSpanish} />
-	})
 	const { logo, slogan } = profile;
 
-	// Schedule
-	const { days, open, time } = {
-		"days": [1, 2, 3, 4, 5],
-		"open": "23:00",
-		"time": "11"
-	}
-
-	const OpenTimeComponents = schedule.map((it, index) => {
-		return <OpenTime key={index} days={it.days} open={it.open} time={it.time} isSpanish={isSpanish} />
-	});
-
 	return (
-		<div className='w-full flex flex-col justify-center bg-orange-100 p-8 gap-4'>
+		<div className='justify-center bg-blue-100 p-5'>
 			<HeaderPage name={name} slogan={slogan} logo={logo} isSpanish={isSpanish} address={address} contact={contact} />
-			{/* Schedule */}
-			<div className='flex justify-center overflow-x-scroll lg:overflow-x-visible'>
-				{OpenTimeComponents}
-			</div>
-			<div className='flex gap-4  '>
-				{menuComponents}
+			<Schedule schedule={schedule} isSpanish={isSpanish} />
+			<div>
+				{
+					menus.map((it, index) => {
+						return <MenuComponent menu={it} key={index} setIsSpanish={setIsSpanish} isSpanish={isSpanish} />
+					})
+				}
 			</div>
 		</div>
 	)
 }
 
-function OpenTime({ days, open, time, isSpanish }) {
-	function getFinalTime() {
+function Schedule({ schedule, isSpanish }) {
+	const [scheduleList, setScheduleList] = useState([])
+
+	function getFinalTime(open, time) {
 		const closeHour = new Date(0, 0, 0, parseInt(open), 0, 0, 0);
 		closeHour.setHours(closeHour.getHours() + parseInt(time));
-		const hours = closeHour.getHours();
-		const minuts = closeHour.getMinutes();
 		return closeHour.toLocaleTimeString(navigator.language, { hourCycle: "h24", hour: "2-digit", minute: "2-digit" })
 	}
 
-	const daysOfWeek = days.map((it, index) => {
-		const endTime = getFinalTime()
-		return (
-			<div className='shadow-lg rounded-xl m-1 p-2 items-center bg-white justify-between' key={index}>
-				<DaysOfWeekList dayIndex={it} isSpanish={isSpanish} openTime={open} closeTime={endTime} />
-			</div>
-		)
-	})
+	function dateTransformer() {
+		const listOfDaysOfWeek = [
+			{ es: "Domingo", en: "Sunday" },
+			{ es: "Lunes", en: "Monday" },
+			{ es: "Martes", en: "Tuesday" },
+			{ es: "Miercoles", en: "Wensday" },
+			{ es: "Juevas", en: "Thursday" },
+			{ es: "Viernes", en: "Friday" },
+			{ es: "Sabado", en: "Saturday" },
+		]
+		const list = [];
+		schedule.map(block => {
+			block.days.map(day => {
+				const closeTime = getFinalTime(block.open, block.time);
+				list.push({
+					day: listOfDaysOfWeek[day],
+					open: block.open,
+					close: closeTime
+				});
+			});
+		});
+
+		setScheduleList(list);
+	}
+
+	useEffect(() => {
+		dateTransformer();
+	}, [schedule]);
 
 	return (
-		<div className='flex'>
-			{daysOfWeek}
+		<div className='bg-white flex flex-wrap my-4 rounded-2xl p-2 gap-2'>
+			{
+				scheduleList.map(it => {
+					return (
+						<div className=' flex-1 flex justify-center bg-blue-100 rounded-2xl p-2'>
+							<div className='flex-1'>
+								{isSpanish ? it.day.es : it.day.en}
+							</div>
+							<div className='flex-1 flex justify-center'>
+								<div className='mx-1'>
+									{it.open}
+								</div>
+								<div className='mx-1'>
+									{it.close}
+								</div>
+							</div>
+						</div>
+					);
+				})
+			}
 		</div>
-	)
+	);
 }
-
-function DaysOfWeekList({ dayIndex, isSpanish, openTime, closeTime }) {
-	const listOfDaysOfWeek = [
-		{ es: "Domingo", en: "Sunday" },
-		{ es: "Lunes", en: "Monday" },
-		{ es: "Martes", en: "Tuesday" },
-		{ es: "Miercoles", en: "Wensday" },
-		{ es: "Juevas", en: "Thursday" },
-		{ es: "Viernes", en: "Friday" },
-		{ es: "Sabado", en: "Saturday" },
-	]
-
-	return (
-		<div className='flex my-4 items-center'>
-			<div className='me-2'>
-				{isSpanish ? listOfDaysOfWeek[dayIndex].es : listOfDaysOfWeek[dayIndex].en}
-			</div>
-			<div>
-				{openTime} - {closeTime}
-			</div>
-		</div>
-	)
-}
-
 
 function HeaderPage({ name, slogan, logo, isSpanish, address, contact }) {
 	return (
-		<div className='grid grid-cols-1 lg:grid-cols-2 shadow-lg rounded-xl p-4 items-center bg-white justify-between'>
+		<div className='flex flex-wrap ounded-xl p-4 items-center bg-white justify-between gap-4 rounded-2xl'>
 			<div className='flex items-center'>
 				<img src={logo.url} className='w-16 h-16 lg:w-32 lg:h-32 me-4' />
 				<div>
@@ -140,23 +139,21 @@ function ContactItem({ icon, text }) {
 	)
 }
 
-
 function MenuComponent({ menu, isSpanish = false, setIsSpanish }) {
-
-
 	const changeLanguaje = () => {
 		setIsSpanish(current => !current)
 	}
 	const { name, sections } = menu;
-	const sectionComponents = sections.map((section, index) => {
-		return <SectionComponent key={index} section={section} isSpanish={isSpanish} />
-	})
 
 	return (
-		<div className='box-border shadow-2xl p-4 rounded-xl relative bg-white'>
-			<div className='text-center text-6xl my-4'>{isSpanish ? name.es : name.en}</div>
-			{sectionComponents}
-			<button onClick={changeLanguaje} className='absolute top-16 sm:top-0 right-0 p-4 rounded-full shadow-md mt-5 me-7 hover:scale-110 hover:shadow-blue-200 duration-300' >
+		<div className='box-border p-2 rounded-xl relative bg-white'>
+			<div className='text-center text-6xl'>{isSpanish ? name.es : name.en}</div>
+			{
+				sections.map((section, index) => {
+					return <SectionComponent key={index} section={section} isSpanish={isSpanish} />
+				})
+			}
+			<button onClick={changeLanguaje} className='absolute top-16 sm:top-0 right-0 p-4 rounded-full mt-5 me-7 hover:shadow-blue-200 duration-300' >
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
 					<path strokeLinecap="round" strokeLinejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
 				</svg>
@@ -168,16 +165,16 @@ function MenuComponent({ menu, isSpanish = false, setIsSpanish }) {
 function SectionComponent({ section, isSpanish }) {
 	const { name, description, icon, items } = section
 
-	const itemsComponents = items.map((it) => {
-		return <Item key={it.id} name={it.name} description={it.description ? it.description : ""} price={it.price} icon={icon} isSpanish={isSpanish} />
-	})
-
 	return (
 		<div className='mt-6'>
 			<div className="text-center text-3xl font-bold">{isSpanish ? name.es : name.en}</div>
 			{description && <div className="text-center text-2xl my-3">{isSpanish ? description.es : description.en}</div>}
-			<div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 p-3 '>
-				{itemsComponents}
+			<div className='flex flex-wrap gap-4 justify-center'>
+				{
+					items.map((it) => {
+						return <Item key={it.id} name={it.name} description={it.description ? it.description : ""} price={it.price} icon={icon} isSpanish={isSpanish} />
+					})
+				}
 			</div>
 		</div>
 	)
@@ -185,7 +182,7 @@ function SectionComponent({ section, isSpanish }) {
 
 function Item({ name = "", description = "", price = "", isSpanish = false, icon }) {
 	return (
-		<div className='flex shadow-lg rounded-xl p-2 items-center hover:scale-110 duration-300 bg-white hover:bg-orange-50'>
+		<div className='flex rounded-xl p-2 items-center duration-300 bg-white hover:bg-blue-50 w-90 h-40'>
 			<img src={icon} className='p-4 w-24 h-24 lg:w-32 lg:h-32' />
 			<div>
 				<div className='text-xl'>{isSpanish ? name.es : name.en}</div>
