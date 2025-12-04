@@ -13,11 +13,9 @@ export function MenuItem({ menu, lang, currency }) {
 
   return (
     <div className="relative">
-      <div className="sticky -top-1 z-10 backdrop-blur-sm py-4 my-6 mt-16 overflow-x-auto w-full @xl:place-items-center ">
-        <h1 className="text-center text-4xl font-extrabold mb-4">
-          <span className="py-10 text-stone-800 bg-clip-text">
-            {name[lang]}
-          </span>
+      <div className="sticky -top-1 z-10 backdrop-blur-sm py-4 my-6 mt-16 overflow-x-auto @xl:place-items-center ">
+        <h1 className="text-center mb-5 py-10 text-stone-800 text-4xl font-extrabold">
+          {name[lang]}
         </h1>
 
         <div className="flex gap-3 min-w-max px-5">
@@ -36,7 +34,7 @@ export function MenuItem({ menu, lang, currency }) {
                 <img
                   src={section.icon}
                   alt={section.name[lang]}
-                  className={`w-5 h-5 object-contain ${isActive && "invert"}`}
+                  className={`size-5 object-contain ${isActive && "invert"}`}
                 />
                 {section.name[lang]}
               </button>

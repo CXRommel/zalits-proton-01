@@ -3,10 +3,17 @@ import { useState } from "react";
 const inputClasses = "w-full px-4 py-2 border border-neutral-300 rounded-lg";
 const labelClasses = "block text-sm font-medium text-neutral-900 mb-2";
 
+export const QuestionType = {
+  Text: 1,
+  ChooseOptions: 2,
+  StarRate: 3,
+  MultilineText: 4,
+};
+
 export function SurveyQuestion({ question, lang, value, onChange }) {
   const { id, question: qText, required, type } = question;
 
-  if (type === 1) {
+  if (type === QuestionType.Text) {
     const { placeholder } = question;
     return (
       <div>
@@ -27,7 +34,7 @@ export function SurveyQuestion({ question, lang, value, onChange }) {
     );
   }
 
-  if (type === 2) {
+  if (type === QuestionType.ChooseOptions) {
     const { options } = question;
     return (
       <div>
@@ -55,7 +62,7 @@ export function SurveyQuestion({ question, lang, value, onChange }) {
     );
   }
 
-  if (type === 3) {
+  if (type === QuestionType.StarRate) {
     const { maxStars } = question;
     const [rangeValue, setRangeValue] = useState(maxStars);
 
@@ -84,7 +91,7 @@ export function SurveyQuestion({ question, lang, value, onChange }) {
     );
   }
 
-  if (type === 4) {
+  if (type === QuestionType.MultilineText) {
     const { rows, placeholder } = question;
     return (
       <div>
