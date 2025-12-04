@@ -1,7 +1,7 @@
 const selectStyle = `w-fit text-sm text-stone-600 px-3 py-2 rounded-lg border border-stone-300
    hover:border-stone-400
    focus:outline-none focus:ring-2 focus:ring-stone-500
-   transition-all cursor-pointer font-medium`;
+   transition-all cursor-pointer font-medium uppercase`;
 
 export function IntlManager({
   supportCurrencies,
@@ -19,7 +19,7 @@ export function IntlManager({
       >
         {supportLangs.map((lng) => (
           <option key={lng} value={lng}>
-            {lng.toUpperCase()}
+            {lng}
           </option>
         ))}
       </select>
@@ -31,7 +31,7 @@ export function IntlManager({
       >
         {supportCurrencies.map((curr) => (
           <option key={curr} value={curr}>
-            {curr.toUpperCase()}
+            {curr}
           </option>
         ))}
       </select>

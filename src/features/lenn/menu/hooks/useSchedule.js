@@ -1,5 +1,4 @@
 export function useSchedule(schedule = [], lang = "en") {
-
   const getDayName = (dayNumber) => {
     const date = new Date(2025, 10, 2 + dayNumber);
     return new Intl.DateTimeFormat(lang, { weekday: "long" }).format(date);
@@ -25,7 +24,6 @@ export function useSchedule(schedule = [], lang = "en") {
   const checkIfOpen = () => {
     const now = new Date();
     const currentDay = now.getDay();
-
 
     for (const interval of schedule) {
       if (interval.days.includes(currentDay)) {

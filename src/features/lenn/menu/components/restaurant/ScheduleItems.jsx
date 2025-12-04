@@ -9,7 +9,6 @@ const ScheduleTitles = {
 };
 
 export function ScheduleCard({ schedule, lang }) {
-
   const { getDayName, getCloseHour, checkIfOpen } = useSchedule(schedule, lang);
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -36,9 +35,7 @@ export function ScheduleCard({ schedule, lang }) {
               ? ScheduleTitles.isOpen[lang]
               : ScheduleTitles.isClosed[lang]}
           </p>
-          <p className="text-stone-500">
-            {ScheduleTitles.viewSchedule[lang]}
-          </p>
+          <p className="text-stone-500">{ScheduleTitles.viewSchedule[lang]}</p>
         </div>
       </div>
 
@@ -46,10 +43,7 @@ export function ScheduleCard({ schedule, lang }) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity">
           <div className="bg-white rounded-2xl w-11/12 max-w-md p-6">
             <div className="grid grid-cols-1 place-items-end">
-              <button
-                onClick={() => setShowModal(false)}
-                className=""
-              >
+              <button onClick={() => setShowModal(false)} className="">
                 <svg className="size-6 hover:text-red-600">
                   <use href="/lenn/sprites.svg#icon-close-x" />
                 </svg>
