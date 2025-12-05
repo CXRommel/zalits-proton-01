@@ -95,7 +95,7 @@ const componentRegistry = [
   {
     id: "menu-donaji",
     name: "Menu Donaji",
-    author: "Alison Euridice Montufar Pina",
+    author: "Donaji Torres",
     description: "Intento de menu de Donaji sin ocupar IA:)",
     Component: MenuDonajiComponent,
   },
