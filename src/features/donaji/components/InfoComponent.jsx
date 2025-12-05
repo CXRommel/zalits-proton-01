@@ -21,23 +21,22 @@ function InfoRestaurantComponent({ menuData, lang }) {
   const formatSchedule = () => {
     return menuData.schedule
       .map((entry) => {
+        const time = parseInt(entry.open) + parseInt(entry.time) + ":00 hrs";
         const dayNames = entry.days
           .map((d) => (lang === "en" ? englishDays[d] : daysMap[d]))
           .join(", ");
-        return `${dayNames}: ${entry.open} AM`;
+        return `\n ${dayNames}: ${entry.open} - ${time} \n`;
       })
-      .join(" - ");
   };
 
   return (
-    <div className="w-full bg-orange-900 p-4 rounded-xl flex flex-col gap-4 max-w-[450px]">
+    <div className="w-full bg-orange-900 p-4 rounded-xl flex flex-col gap-4 max-w-[450px] break-all">
       <div className="bg-white rounded-xl p-4 flex items-start gap-3 shadow-md">
         <img
           src="https://img.icons8.com/ios-filled/50/clock.png"
           alt="Horario"
           className="w-7 h-7 opacity-80"
         />
-
         <div>
           <h3 className="text-orange-950 font-semibold text-lg">
             {lang === "en" ? "Schedule" : "Horario"}
@@ -47,14 +46,12 @@ function InfoRestaurantComponent({ menuData, lang }) {
           </p>
         </div>
       </div>
-
       <div className="bg-white rounded-xl p-4 flex items-start gap-3 shadow-md">
         <img
           src="https://img.icons8.com/ios-filled/50/marker.png"
           alt="Dirección"
           className="w-7 h-7 opacity-80"
         />
-
         <div>
           <h3 className="text-orange-950 font-semibold text-lg">
             {lang === "en" ? "Address" : "Dirección"}
@@ -67,7 +64,6 @@ function InfoRestaurantComponent({ menuData, lang }) {
           </p>
         </div>
       </div>
-
       <div className="bg-white rounded-xl p-4 flex items-start gap-3 shadow-md">
         <img
           src="https://media.istockphoto.com/id/1145172366/es/vector/icono-de-tel%C3%A9fono-vector-persona-usuario-hombre-perfil-avatar-s%C3%ADmbolo-para-contacto.jpg?s=612x612&w=0&k=20&c=gijOjCq3fBdLoBmO_SXyIlBK_8nll0kJ5u701g_4Zsc="
@@ -78,27 +74,27 @@ function InfoRestaurantComponent({ menuData, lang }) {
           <h3 className="text-orange-950 font-semibold text-lg">
             {lang === "en" ? "Contact" : "Contacto"}
           </h3>
-          <p className="text-orange-950 text-sm leading-tight">
+          <p className="text-orange-950 text-sm leading-tight ">
             {menuData.contact.phone}
             <br />
             {menuData.contact.email}
             <br />
             Social:
+            <br />
             <a
-              href={menuData.contact.social.facebook}
+              href={menuData.contact.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-3"
             >
-              -Instagram
+              🩵Instagram
             </a>
+            <br />
             <a
               href={menuData.contact.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-7"
             >
-              -Facebook
+              🩵Facebook
             </a>
           </p>
         </div>
