@@ -1,3 +1,5 @@
+import React from 'react';
+
 const langContact = {
   "en": "Contact",
   "es": "Contacto"
@@ -14,8 +16,11 @@ const langSocialMedia = {
 }
 
 function ContactSection({ contact, lang }) {
+  const { social } = contact;
+
   return (
-    <div className=" w-full max-w-2xl mx-auto bg-gray-800 rounded-xl border border-gray-700 shadow-md p-6 sm:p-8">
+    <div className="w-full max-w-2xl mx-auto bg-gray-800 rounded-xl border border-gray-700 shadow-md p-6 sm:p-8">
+
       <h2 className="text-2xl font-bold text-white mb-4">
         {langContact[lang]}
       </h2>
@@ -36,14 +41,13 @@ function ContactSection({ contact, lang }) {
       </h2>
 
       <div className="flex items-center gap-5">
-        <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition-opacity">
-          <img src="https://pngimg.com/uploads/instagram/instagram_PNG10.png" alt="instagram logo" className="w-8 h-8 object-contain"/>
-        </a>
-
-        <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition-opacity">
-          <img src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19748.png" alt="facebook logo" className="w-8 h-8 object-contain"/>
-        </a>
+        {Object.entries(social).map(([platform, url]) => (
+          <a key={platform} href={url} target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition-opacity" title={platform.charAt(0).toUpperCase() + platform.slice(1)}>
+            <img src={`https://www.google.com/s2/favicons?domain=${platform}.com&sz=128`} alt={`${platform} logo`} className="w-8 h-8 object-contain rounded-lg"/>
+          </a>
+        ))}
       </div>
+
     </div>
   );
 }
