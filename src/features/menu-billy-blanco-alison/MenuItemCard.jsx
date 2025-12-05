@@ -1,6 +1,6 @@
 const MenuItemCard = ({ item, translation, prices }) => {
   return (
-    <div className="bg-[#1a1a1a] rounded-2xl shadow-md border border-orange-500/20 flex flex-col justify-between hover:shadow-orange-400/30 hover:scale-[1.03] transition-transform duration-300">
+    <div className="bg-[#1a1a1a] w-full rounded-2xl shadow-md border border-orange-500/20 flex flex-col justify-between overflow-hidden">
       <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-bold text-orange-300 truncate">
           {translation(item.name)}

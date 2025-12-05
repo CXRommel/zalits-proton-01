@@ -1,6 +1,6 @@
-const Header = ({ restaurant, language, setLanguage, translation }) => {
+const Header = ({ restaurant, language, setLanguage, translation, scheduleStatus }) => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-black/70 backdrop-blur-md border-b border-orange-500/30 shadow-md">
+    <header className="w-full bg-black/70 backdrop-blur-md border-b border-orange-500/30 shadow-md">
       <div className="flex flex-col items-center py-3 px-4">
         {/* Logo */}
         <img
@@ -18,6 +18,14 @@ const Header = ({ restaurant, language, setLanguage, translation }) => {
         <p className="text-xs sm:text-sm text-gray-300 italic mt-1 max-w-xs text-center">
           {translation(restaurant.profile.slogan)}
         </p>
+        {/* Horario */}
+        <p
+          className={`mt-2 text-sm font-semibold ${scheduleStatus.isOpen ? "text-green-400" : "text-red-400"
+            }`}
+        >
+          {scheduleStatus.isOpen ? "🟢" : "🔴"} {scheduleStatus.text}
+        </p>
+
 
         {/* Selector de idioma */}
         <div className="flex gap-2 mt-3">
@@ -25,11 +33,10 @@ const Header = ({ restaurant, language, setLanguage, translation }) => {
             <button
               key={lang}
               onClick={() => setLanguage(lang)}
-              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
-                language === lang
-                  ? "bg-orange-500 text-white shadow-md"
-                  : "bg-orange-100 text-orange-700 hover:bg-orange-200 hover:text-orange-900"
-              }`}
+              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 transform hover:scale-105 ${language === lang
+                ? "bg-orange-500 text-white shadow-md"
+                : "bg-orange-100 text-orange-700 hover:bg-orange-200 hover:text-orange-900"
+                }`}
             >
               {lang.toUpperCase()}
             </button>

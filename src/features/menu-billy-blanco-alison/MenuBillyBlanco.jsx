@@ -26,6 +26,39 @@ const MenuBillyBlanco = () => {
     if (!obj) return "";
     return obj[language] || obj.es || "";
   };
+  const getScheduleStatus = (schedule) => {
+    const now = new Date();
+    const currentDay = now.getDay();
+    const currentHour = now.getHours();
+
+    const todaySchedule = schedule.find((s) =>
+      s.days.includes(currentDay)
+    );
+
+    if (!todaySchedule) {
+      return {
+        isOpen: false,
+        text: language === "es" ? "Cerrado hoy" : "Closed today",
+      };
+    }
+
+    const openHour = parseInt(todaySchedule.open.split(":")[0]);
+    const closeHour = openHour + parseInt(todaySchedule.time);
+
+    const isOpen = currentHour >= openHour && currentHour < closeHour;
+
+    return {
+      isOpen,
+      text: isOpen
+        ? language === "es"
+          ? `Abierto de ${openHour}:00 a ${closeHour}:00`
+          : `Open from ${openHour}:00 to ${closeHour}:00`
+        : language === "es"
+          ? `Cerrado · Abre a las ${openHour}:00`
+          : `Closed · Opens at ${openHour}:00`,
+    };
+  };
+
 
   if (!restaurant)
     return (
@@ -47,6 +80,7 @@ const MenuBillyBlanco = () => {
         language={language}
         setLanguage={setLanguage}
         translation={translation}
+        scheduleStatus={getScheduleStatus(restaurant.schedule)}
       />
 
       <MenuSections
@@ -60,6 +94,7 @@ const MenuBillyBlanco = () => {
         language={language}
         translation={translation}
         setShowSurvey={setShowSurvey}
+        scheduleStatus={getScheduleStatus(restaurant.schedule)}
       />
 
       {showSurvey && (
