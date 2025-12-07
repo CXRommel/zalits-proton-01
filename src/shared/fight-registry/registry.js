@@ -40,7 +40,7 @@
 import { TopMenuHighDefinition } from "#src/features/ali";
 import { CounterComponent } from "#src/features/example-counter";
 import { TimerComponent } from "#src/features/example-timer";
-import { MenuBillyBlanco } from "#src/features/menu-billy-blanco";
+import { MenuBillyBlanco } from "#src/features/menu-billy-blanco-alison";
 import { MenuDonajiComponent } from "#src/features/donaji/";
 import { MenuComponent } from "#src/features/lenn/menu";
 import { MenuRestaurant } from "#src/features/menu-billy-blanco-orlando";
