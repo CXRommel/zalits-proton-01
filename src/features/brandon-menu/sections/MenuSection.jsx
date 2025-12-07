@@ -13,65 +13,68 @@ const tableHeaders = {
   },
 };
 
+function MenuItemCard({ item, lang, currency }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const description = item.description ? item.description[lang] : null;
+  const hasDescription = description && description.trim().length > 0;
+
+  const toggleOpen = () => {
+    if (hasDescription) {
+      setIsOpen(!isOpen);
+    }
+  };
+
+  return (
+    <div
+      onClick={toggleOpen} className={`relative overflow-hidden rounded-xl border transition-all duration-300 ${hasDescription ? "cursor-pointer hover:bg-gray-700/50 border-gray-700 bg-gray-800/40" : "cursor-default border-gray-700/30 bg-gray-800/20"} ${isOpen ? "bg-gray-700/60 border-blue-500/30 ring-1 ring-blue-500/20" : ""}`}>
+      <div className="p-4 flex justify-between items-center gap-4">
+
+        <div className="flex-1">
+          <h3 className="text-lg font-bold text-gray-100 leading-tight">
+            {item.name[lang]}
+          </h3>
+        </div>
+
+        <div className="flex items-center gap-3">
+          {item.price && (
+            <span className="font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full text-sm whitespace-nowrap">
+              ${item.price[currency]}
+            </span>
+          )}
+
+          {hasDescription && (
+            <div className={`text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-blue-400" : ""}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {hasDescription && isOpen && (
+        <div className="px-4 pb-4 pt-0 animate-fadeIn">
+          <div className="h-px w-full bg-gray-700/50 mb-3"></div>
+          <p className="text-sm text-gray-300 leading-relaxed font-medium">
+            {description}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function MenuItemsList({ items, lang, currency }) {
   if (!items || items.length === 0) {
     return null;
   }
 
-  const headers = tableHeaders[lang] || tableHeaders.es;
-
-  const tableRows = items.map((item) => {
-    return (
-      <tr className="block md:table-row border-b border-gray-700 hover:bg-gray-700" key={item.id}>
-        <td className="block md:table-cell p-3 border-b border-gray-700 md:border-b-0">
-          <span className="md:hidden font-medium text-gray-400 mr-2">
-            {headers.name}:
-          </span>
-          <span className="font-medium text-white">
-            {item.name[lang]}
-          </span>
-        </td>
-
-        <td className="block md:table-cell p-3 border-b border-gray-700 md:border-b-0">
-          <span className="md:hidden font-medium text-gray-400 mr-2">
-            {headers.description}:
-          </span>
-          <span className="text-sm text-gray-300">
-            {item.description ? item.description[lang] : ""}
-          </span>
-        </td>
-
-        <td className="block md:table-cell p-3 text-left md:text-right">
-          <span className="md:hidden font-medium text-gray-400 mr-2">
-            {headers.price}:
-          </span>
-          <span className="font-semibold text-white">
-            {item.price ? `$${item.price[currency]}` : ""}
-          </span>
-        </td>
-      </tr>
-    );
-  });
-
   return (
-    <table className="w-full">
-      <thead className="hidden md:table-header-group">
-        <tr>
-          <th className="p-3 bg-gray-700 text-left font-semibold uppercase text-sm text-gray-300 border-b-2 border-gray-700">
-            {headers.name}
-          </th>
-          <th className="p-3 bg-gray-700 text-left font-semibold uppercase text-sm text-gray-300 border-b-2 border-gray-700">
-            {headers.description}
-          </th>
-          <th className="p-3 bg-gray-700 text-right font-semibold uppercase text-sm text-gray-300 border-b-2 border-gray-700">
-            {headers.price}
-          </th>
-        </tr>
-      </thead>
-      <tbody className="block md:table-row-group">
-        {tableRows}
-      </tbody>
-    </table>
+    <div className="w-full grid grid-cols-1 gap-3">
+      {items.map((item) => (
+        <MenuItemCard key={item.id || item.name[lang]} item={item} lang={lang} currency={currency} />
+      ))}
+    </div>
   );
 }
 
@@ -94,7 +97,6 @@ function MenuHeader({ menuItem, lang, currency, currencies, handleCurrencyChange
         </h1>
 
         <div className="flex flex-wrap justify-center items-center gap-4 w-full">
-
           {sections.map((section, index) => (
             <button key={section.name[lang]} onClick={() => setSelectedIndex(index)} title={section.name[lang]}
               className={`p-2 rounded-full transition-all duration-200 ease-in-out
@@ -118,7 +120,6 @@ function MenuHeader({ menuItem, lang, currency, currencies, handleCurrencyChange
               ))}
             </select>
           </div>
-
         </div>
       </div>
 
@@ -143,7 +144,6 @@ function MenuHeader({ menuItem, lang, currency, currencies, handleCurrencyChange
 }
 
 function MenuSection({ menus, lang, currency, currencies, handleCurrencyChange }) {
-
   const menusSection = menus.map((menuItem) => {
     return (
       <div key={menuItem.name[lang]}>
