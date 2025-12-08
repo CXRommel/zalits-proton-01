@@ -16,7 +16,7 @@ export default function MenuHeader({
         <div className="flex items-center gap-4">
           <img
             src={
-              "https://scontent.fmex31-1.fna.fbcdn.net/v/t39.30808-6/263638995_109836721536269_961652445950806142_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=srVUxedC-BcQ7kNvwGoLcpc&_nc_oc=AdknwBERPjEKiNcKjeELa3mCBbk-QZ8JKofCumvtebSLCqkjftl0fCIiBWWCtuG5O7Asgn5HmMfh7wDqkolvQMnR&_nc_zt=23&_nc_ht=scontent.fmex31-1.fna&_nc_gid=JVrg1U7swX-QUVWEyK3GCg&oh=00_Afj1dT2pzEcVov1t_0ZbwTDakXCffbY5dBJCbxZYFWIcIQ&oe=691E497C"
+              "https://zalits-hermes-bucket.sfo2.cdn.digitaloceanspaces.com/iris/p/019a5cd9-f468-7e4f-99e4-a3d1058c2fc2.jpg"
             }
             alt="Restaurant Logo"
             className="w-20 h-20 rounded-full object-cover border-2 border-orange-300"
