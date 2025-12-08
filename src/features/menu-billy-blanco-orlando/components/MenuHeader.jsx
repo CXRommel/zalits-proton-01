@@ -1,4 +1,5 @@
 import { text } from "../helpers/text";
+import { getScheduleStatus } from "../helpers/schedule";
 
 export default function MenuHeader({
   dataMenu,
@@ -6,6 +7,9 @@ export default function MenuHeader({
   handlerLanguage,
   handlerCurrency,
 }) {
+
+  const scheduleStatus = getScheduleStatus(dataMenu.schedule, language);
+
   return (
     <header className="bg-white rounded-lg p-6 shadow-sm border border-orange-200">
       <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
@@ -33,11 +37,10 @@ export default function MenuHeader({
               handlerLanguage("es");
               handlerCurrency("mxn");
             }}
-            className={`px-5 py-2 rounded-lg font-semibold transition-all ${
-              language === "es"
-                ? "bg-orange-500 text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-            }`}
+            className={`px-5 py-2 rounded-lg font-semibold transition-all ${language === "es"
+              ? "bg-orange-500 text-white"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
           >
             ES
           </button>
@@ -46,11 +49,10 @@ export default function MenuHeader({
               handlerLanguage("en");
               handlerCurrency("usd");
             }}
-            className={`px-5 py-2 rounded-lg font-semibold transition-all ${
-              language === "en"
-                ? "bg-orange-500 text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-            }`}
+            className={`px-5 py-2 rounded-lg font-semibold transition-all ${language === "en"
+              ? "bg-orange-500 text-white"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
           >
             EN
           </button>
@@ -72,6 +74,15 @@ export default function MenuHeader({
           <p className="font-semibold text-orange-600 mb-1">Contacto</p>
           <p>{dataMenu.contact.phone}</p>
           <p>{dataMenu.contact.email}</p>
+        </div>
+
+        <div className="mt-3 pt-3 border-t border-gray-200">
+          <p
+            className={`font-semibold text-sm ${scheduleStatus.isOpen ? "text-green-600" : "text-red-600"
+              }`}
+          >
+            {scheduleStatus.text}
+          </p>
         </div>
       </div>
     </header>
