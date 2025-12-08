@@ -3,6 +3,7 @@ import DataMenu from "#src/data/client.json";
 import MenuHeader from "./components/MenuHeader";
 import MenuSection from "./components/MenuSection";
 import MenuSurvey from "./components/MenuSurvey";
+import MenuSchedule from "./components/MenuSchedule";
 
 function RestaurantMenu() {
   const [language, setLanguage] = useState(DataMenu.intl.defaultLanguage);
@@ -45,6 +46,8 @@ function RestaurantMenu() {
         language={language}
         currency={currency}
       />
+
+      <MenuSchedule schedule={DataMenu.schedule} language={language} />
 
       <MenuSurvey
         survey={DataMenu.survey}
