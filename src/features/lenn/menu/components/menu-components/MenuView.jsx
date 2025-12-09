@@ -41,7 +41,7 @@ export default function MenuView() {
     "h-full bg-stone-50 p-6 rounded-2xl grid place-items-center text-stone-700 break-all rounded-3xl hover:shadow-sm transition-all duration-300 group";
 
   return (
-    <div className="@container m-auto bg-stone-100 select-none rounded-2xl">
+    <div className="@container bg-stone-100 select-none rounded-2xl">
       <div className="p-8 max-w-5xl m-auto">
         <div className="bg-white/80 border-b border-white/20 shadow-sm p-4 rounded-3xl mb-10">
           <IntlManager
