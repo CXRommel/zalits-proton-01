@@ -164,7 +164,7 @@ function FightSection() {
           </ol>
         </div>
       </div>
-    </section >
+    </section>
   );
 }
 
