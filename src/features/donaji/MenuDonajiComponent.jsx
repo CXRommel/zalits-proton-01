@@ -12,7 +12,7 @@ function MenuDonajiComponent() {
   const [curr, setCurr] = useState(defaultCurr);
 
   return (
-    <div className="w-full mx-auto px-4">
+    <div className="@container/menu w-full mx-auto px-4">
       <HeadComponent
         menuData={menuData}
         lang={lang}
@@ -21,12 +21,18 @@ function MenuDonajiComponent() {
         setCurr={setCurr}
       />
 
-      <div className="flex flex-col md:flex-row gap-6 mt-6">
-        <div className="md:w-1/3 w-full">
+      <div className="
+        flex flex-col
+        @[600px]/menu:flex-row
+        gap-6 mt-6
+        justify-center
+        items-start
+      ">
+        <div className="w-full @[600px]/menu:w-1/3 flex justify-center">
           <InfoComponent menuData={menuData} lang={lang} />
         </div>
 
-        <div className="md:w-2/3 w-full">
+        <div className="w-full @[600px]/menu:w-1/3 flex justify-center">
           <MenuComponent menuData={menuData} language={lang} currency={curr} />
         </div>
       </div>
