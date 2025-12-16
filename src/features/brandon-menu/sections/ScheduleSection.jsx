@@ -59,7 +59,7 @@ function ReturnDayWithScheduleWithMap({ schedule, lang, headers }) {
 
   const daysRows = days.map((day) => {
     return (
-      <tr className="block md:table-row border-b border-gray-700" key={day}>
+      <tr className="block md:table-row border-b border-gray-700 hover:bg-gray-700" key={day}>
         <td className="block md:table-cell p-3 border-b border-gray-700 md:border-b-0">
           <span className="md:hidden font-medium text-gray-400 mr-2">
             {headers.day}:
@@ -69,7 +69,7 @@ function ReturnDayWithScheduleWithMap({ schedule, lang, headers }) {
           </span>
         </td>
 
-        <td className="block md:table-cell p-3 text-right">
+        <td className="block md:table-cell p-3 text-left md:text-right">
           <span className="md:hidden font-medium text-gray-400 mr-2">
             {headers.schedule}:
           </span>
@@ -111,7 +111,7 @@ function ScheduleSection({ schedule, lang }) {
           </tr>
         </thead>
 
-        <tbody className="block md:table-row-group">
+        <tbody className="block text-left md:table-row-group">
           {scheduleSection}
         </tbody>
       </table>

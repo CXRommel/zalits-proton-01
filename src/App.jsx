@@ -1,5 +1,6 @@
 import { CoursePage } from "#src/features/course";
 import { StandaloneMenuViewer } from "#src/pages";
+import { TopMenuHighDefinition } from "./features/ali";
 
 function App() {
   // Check if we're in standalone mode

@@ -1,4 +1,19 @@
+import { useState } from "react";
+
+const getInitials = (name) => {
+  if (!name) return "";
+  const parts = name.split(' ');
+  let initials = parts[0].substring(0, 1).toUpperCase();
+
+  if (parts.length > 1) {
+    initials += parts[parts.length - 1].substring(0, 1).toUpperCase();
+  }
+  return initials;
+};
+
 function ProfileSection({ profile, name, lang, languages, handleLangChange }) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <div className=" w-full max-w-2xl mx-auto bg-gray-800 rounded-xl border border-gray-700 shadow-md p-6 sm:p-8 flex flex-col items-center sm:flex-row sm:items-center sm:gap-8 relative">
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
@@ -11,7 +26,15 @@ function ProfileSection({ profile, name, lang, languages, handleLangChange }) {
         </select>
       </div>
 
-      <img className="w-24 h-24 rounded-full object-cover shadow-lg mb-5 sm:mb-0 flex-shrink-0" src={profile.logo.url} alt={`${name} Logo`}/>
+      {profile.logo?.url && !imageError ? (
+        <img className="w-24 h-24 rounded-full object-cover shadow-lg mb-5 sm:mb-0 flex-shrink-0 bg-gray-700" src={profile.logo.url} alt={`${name} Logo`} onError={() => setImageError(true)}/>
+      ) : (
+        <div className="w-24 h-24 rounded-full shadow-lg mb-5 sm:mb-0 flex-shrink-0 bg-gray-700 border-2 border-gray-600 flex items-center justify-center">
+          <span className="text-3xl font-bold text-gray-300 select-none">
+            {getInitials(name)}
+          </span>
+        </div>
+      )}
 
       <div className="text-center sm:text-left">
         <h1 className="text-3xl font-bold text-white mb-2">
